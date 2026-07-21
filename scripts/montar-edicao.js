@@ -213,7 +213,10 @@ const md = [
   '',
   `# Edição ${numero} — ${hoje.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}`,
   '',
-  ...linhas_md
+  ...linhas_md,
+  '',
+  `_Curadoria e edição: [FromTech](https://www.linkedin.com/company/121613929/)_`,
+  ''
 ].join('\n');
 
 fs.writeFileSync(path.join(dir, `${slug}.md`), md);
