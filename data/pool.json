@@ -26,7 +26,7 @@
           "id": "a1",
           "desc": "Receita de R$ 168 bi (+10,6%) e produção primária 1,18 mi t (+8,5%) — maior desde 2013",
           "impacto_brasil": "Cadeia primária forte, mas o crescimento não chega ao elo transformador onde está o perfil.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -47,7 +47,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "A receita da indústria brasileira do alumínio chegou a R$ 168 bilhões em 2025, alta de 10,6%, segundo o Anuário Estatístico da ABAL divulgado em julho de 2026. A produção de alumínio primário subiu 8,5%, para 1,18 milhão de toneladas, o maior volume desde 2013. A fatia de importados no mercado nacional passou de 11,2% para 12%, com a China respondendo por 26,9% do volume estrangeiro. O superávit de US$ 3,3 bilhões é sustentado quase inteiramente por matérias-primas, enquanto os itens de maior valor agregado — onde estão os perfis extrudados — perdem espaço.",
       "comentario_editorial": "Número-âncora do ano para o Brasil. O ponto editorial não é o crescimento, é a composição: quem cresce é a cadeia primária, não o transformador. Esse é o tensionamento que a newsletter deve explorar."
     },
@@ -131,7 +131,7 @@
           "id": "a1",
           "desc": "LME entre US$ 3.100–3.500/t em 2026, alta de ~20% no ano",
           "impacto_brasil": "Tarugo mais caro comprime margem do extrusor que não consegue repassar custo imediatamente.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -158,7 +158,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "Desde o início de 2026 o alumínio na LME opera entre US$ 3.100 e US$ 3.500 por tonelada, alta acumulada de quase 20% no ano. Dois fatores estruturais sustentam a curva: o bloqueio do Estreito de Ormuz, que interrompeu exportações de uma região responsável por cerca de 9% da oferta global, e o teto político da capacidade chinesa em cerca de 45 milhões de toneladas — o país deixou de funcionar como fornecedor de reserva que historicamente amortecia os ciclos de alta.",
       "comentario_editorial": "A notícia mais rica do pool: 5 ângulos, todos com número próprio. Sustentar até 3 edições só com ela. O ângulo a5 é o mais estratégico: Alcoa aposta no Brasil como hub de matéria-prima — o oposto do que o setor transformador precisa."
     },
@@ -183,7 +183,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "vencida",
       "texto_editado": "Em 6 de março de 2026, o preço oficial à vista do alumínio na LME era de US$ 3.384,50 por tonelada, com o contrato de três meses fechando a US$ 3.446/t. O mercado atribuía um prêmio de risco à possibilidade de que preços mais altos da energia afetassem a viabilidade econômica das fundições.",
       "comentario_editorial": "Usar só como marco histórico de preço em peças que tracem a evolução da LME ao longo do ano. Não tem força sozinha."
     },
@@ -208,7 +208,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "vencida",
       "texto_editado": "",
       "comentario_editorial": "FONTE FRACA — comercial chinesa, possivelmente gerada. Usar apenas para o conceito de estratificação, nunca para número. Cruzar com fonte independente antes de publicar."
     },
@@ -230,7 +230,7 @@
           "id": "a1",
           "desc": "Bancos de dados de ligas para simulação de extrusão e laminação",
           "impacto_brasil": "Extrusor que adotar modelagem digital reduz tempo de desenvolvimento de nova ferramenta em semanas.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -251,7 +251,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "",
       "comentario_editorial": "Evergreen com validade de 365 dias. Ângulo a3 e a4 são os mais originais do pool inteiro — nenhum outro veículo está cobrindo."
     },
@@ -273,7 +273,7 @@
           "id": "a1",
           "desc": "CBA entra em 2026 com dívida alongada e previsibilidade energética (Luciano Alves, CEO)",
           "impacto_brasil": "CBA como extrusora e como produtor de primário: decisões dela afetam preço de tarugo no mercado interno.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -294,7 +294,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "",
       "comentario_editorial": "Fatiar por empresa: cada ângulo é uma edição diferente. Nunca dois na mesma edição. Texto precisa ser escrito — só temos os fatos, não a narrativa."
     },
@@ -369,7 +369,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "vencida",
       "texto_editado": "",
       "comentario_editorial": "Fora da janela de 120 dias. Usar só como precedente comparativo quando a pauta de defesa comercial em extrudados evoluir."
     },
@@ -449,7 +449,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "vencida",
       "texto_editado": "O setor de esquadrias de alumínio faturou R$ 10,53 bilhões em 2024, alta de 19,8% sobre os R$ 8,79 bilhões de 2023. O crescimento supera em quase quatro vezes a expansão da construção civil, de 4,3% no mesmo período. Fachadas lideraram o consumo com crescimento de 13,8%, seguidas pelos sistemas com 10,9%.",
       "comentario_editorial": "Dado mais importante do pool para o elo transformador. Fora da janela de 120 dias, mas o número de NT-014 confirma com fonte mais recente — usar NT-014 como âncora e esta como profundidade."
     },
@@ -471,7 +471,7 @@
           "id": "a1",
           "desc": "Esquadrias (+19,8%) crescem ~4x mais que a construção civil (+4,3% em 2024 / +0,5% em 2025)",
           "impacto_brasil": "Setor descolado do ciclo da construção: argumento para investimento mesmo em macro adverso.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -480,7 +480,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "A Fesqua 2026, marcada para setembro em São Paulo, amplia sua área de exposição em 25% e deve reunir 700 marcas expositoras. Segundo a AFEAL, o setor de esquadrias de alumínio faturou R$ 10,53 bilhões em 2024, alta de 19,8%, superando o crescimento da construção civil em quase quatro vezes.",
       "comentario_editorial": "Melhor item para o Gap 1. Dentro da janela, dado confirmado pela AFEAL, e traz o contexto da Fesqua como gancho de atualidade."
     },
@@ -511,7 +511,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "vencida",
       "texto_editado": "",
       "comentario_editorial": "Conteúdo perene de alto valor prático. O ângulo a2 — usar NCM como inteligência de mercado — é o mais original e útil para o gestor industrial."
     },
@@ -533,7 +533,7 @@
           "id": "a1",
           "desc": "Abertura em 2/4/2026: escopo cobre ligas séries 1,2,3,5,6,7; parede >0,5mm; máx 27kg/m; seção ≤421mm",
           "impacto_brasil": "Escopo idêntico ao que seria necessário para um pleito brasileiro — serve de modelo técnico.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -554,7 +554,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "A Austrália abriu em 2 de abril de 2026 investigação antidumping sobre extrudados de alumínio da China. O escopo cobre perfis das ligas das séries 1, 2, 3, 5, 6 e 7, acabamento bruto, mecânico, anodizado ou pintado, espessura de parede acima de 0,5 mm, peso máximo de 27 kg por metro e seção que caiba em círculo de 421 mm — as mesmas categorias que chegam ao Brasil pelas NCMs 7604 e 7610 hoje sem barreira equivalente.",
       "comentario_editorial": "PAUTA MAIS FORTE DO POOL. Combinar ângulo a3 com NT-010 e NT-011 para construir a série: 'enquanto o mundo se protege, o Brasil não tem medida'. O resultado da investigação australiana (decisão esperada em jul/2026) é a próxima apuração prioritária."
     },
@@ -576,7 +576,7 @@
           "id": "a1",
           "desc": "AFEAL: automação é solução parcial — cresce demanda por operador especializado, não desaparece",
           "impacto_brasil": "Automação sem qualificação não resolve: quem investir em máquina precisa investir em treinamento junto.",
-          "usado_em": null
+          "usado_em": 1
         },
         {
           "id": "a2",
@@ -591,7 +591,7 @@
           "usado_em": null
         }
       ],
-      "status": "disponivel",
+      "status": "parcial",
       "texto_editado": "Segundo Fernando Rosa, gerente-geral da AFEAL, a automação é alternativa importante para reduzir o gargalo de mão de obra qualificada no setor de esquadrias — mas é solução parcial. Em vez de eliminar operadores, a automação eleva a demanda por profissionais especializados. A entidade investe em capacitação via Academia AFEAL e parceria com o SENAI.",
       "comentario_editorial": "Dentro da janela, material declaratório sólido. Ângulo a1 tem o contraponto mais valioso: automação e qualificação são complementares, não substitutos."
     },

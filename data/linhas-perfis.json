@@ -17,8 +17,14 @@
       "Journals: Materials & Design, Journal of Materials Processing Technology"
     ],
     "campos_obrigatorios_para_validacao": [
-      "empresa", "linha", "tipo", "liga_tempera", "diferencial_tecnico",
-      "aplicacao_alvo", "fonte", "data_confirmada"
+      "empresa",
+      "linha",
+      "tipo",
+      "liga_tempera",
+      "diferencial_tecnico",
+      "aplicacao_alvo",
+      "fonte",
+      "data_confirmada"
     ]
   },
   "linhas": [

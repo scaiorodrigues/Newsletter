@@ -6,28 +6,54 @@
     "mix": {
       "global_estrategico": {
         "qtd": 2,
-        "blocos": ["mercado_global", "politica_comercial_normas"],
-        "janela_dias": [0, 120]
+        "blocos": [
+          "mercado_global",
+          "politica_comercial_normas"
+        ],
+        "janela_dias": [
+          0,
+          120
+        ]
       },
       "brasil_em_foco": {
         "qtd": 2,
-        "blocos": ["brasil_em_foco"],
-        "janela_dias": [0, 120]
+        "blocos": [
+          "brasil_em_foco"
+        ],
+        "janela_dias": [
+          0,
+          120
+        ]
       },
       "tecnologia_prd": {
         "qtd": 1,
-        "blocos": ["tecnologia_prd"],
-        "janela_dias": [0, 365]
+        "blocos": [
+          "tecnologia_prd"
+        ],
+        "janela_dias": [
+          0,
+          365
+        ]
       },
       "empresas_operacoes": {
         "qtd": 1,
-        "blocos": ["empresas_operacoes"],
-        "janela_dias": [0, 120]
+        "blocos": [
+          "empresas_operacoes"
+        ],
+        "janela_dias": [
+          0,
+          120
+        ]
       },
       "aplicacoes": {
         "qtd": 1,
-        "blocos": ["aplicacoes_mercados_fim"],
-        "janela_dias": [0, 365]
+        "blocos": [
+          "aplicacoes_mercados_fim"
+        ],
+        "janela_dias": [
+          0,
+          365
+        ]
       },
       "linha_perfil": {
         "qtd": 1,
@@ -37,5 +63,48 @@
     "intervalo_minimo_reaparicao": 2,
     "nota_reposicao": "Se faltar item num slot, puxar do bloco mais próximo por peso. Nunca deixar buraco."
   },
-  "edicoes": []
+  "edicoes": [
+    {
+      "numero": 1,
+      "data": "2026-07-21",
+      "itens": [
+        {
+          "id": "NT-004",
+          "angulo": "a1",
+          "slot": "global_estrategico"
+        },
+        {
+          "id": "NT-016",
+          "angulo": "a1",
+          "slot": "global_estrategico"
+        },
+        {
+          "id": "NT-001",
+          "angulo": "a1",
+          "slot": "brasil_em_foco"
+        },
+        {
+          "id": "NT-014",
+          "angulo": "a1",
+          "slot": "brasil_em_foco"
+        },
+        {
+          "id": "NT-007",
+          "angulo": "a1",
+          "slot": "tecnologia_prd"
+        },
+        {
+          "id": "NT-008",
+          "angulo": "a1",
+          "slot": "empresas_operacoes"
+        },
+        {
+          "id": "NT-017",
+          "angulo": "a1",
+          "slot": "aplicacoes_reposicao"
+        }
+      ],
+      "linha_perfil": null
+    }
+  ]
 }
