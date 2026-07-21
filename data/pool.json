@@ -1,0 +1,655 @@
+{
+  "_meta": {
+    "versao": "2.0",
+    "atualizado_em": "2026-07-21",
+    "escopo": "Global — alumínio e manufatura de perfis",
+    "janela_noticia_dias": 120,
+    "janela_prd_dias": 365,
+    "total_itens": 19
+  },
+  "itens": [
+    {
+      "id": "NT-001",
+      "data_fato": "2026-07-13",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Poder360",
+      "url": "https://www.poder360.com.br/poder-economia/industria-do-aluminio-fatura-r-168-bi-mas-importados-ganham-espaco/",
+      "bloco": "brasil_em_foco",
+      "titulo": "Indústria do alumínio fatura R$ 168 bi, mas importados ganham espaço",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Receita de R$ 168 bi (+10,6%) e produção primária 1,18 mi t (+8,5%) — maior desde 2013",
+          "impacto_brasil": "Cadeia primária forte, mas o crescimento não chega ao elo transformador onde está o perfil.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Fatia de importados sobe de 11,2% para 12%; China responde por 26,9% do volume estrangeiro",
+          "impacto_brasil": "Cada ponto percentual ganho pelo importado é receita tirada do extrusor nacional.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Superávit de US$ 3,3 bi sustentado quase só por matéria-prima — manufaturado perde espaço",
+          "impacto_brasil": "O Brasil exporta metal e importa produto: lógica que corrói margens de quem transforma.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "Investimentos de R$ 6,8 bi e 508 mil empregos diretos e indiretos",
+          "impacto_brasil": "Argumento para políticas de conteúdo local e defesa comercial no elo transformador.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "A receita da indústria brasileira do alumínio chegou a R$ 168 bilhões em 2025, alta de 10,6%, segundo o Anuário Estatístico da ABAL divulgado em julho de 2026. A produção de alumínio primário subiu 8,5%, para 1,18 milhão de toneladas, o maior volume desde 2013. A fatia de importados no mercado nacional passou de 11,2% para 12%, com a China respondendo por 26,9% do volume estrangeiro. O superávit de US$ 3,3 bilhões é sustentado quase inteiramente por matérias-primas, enquanto os itens de maior valor agregado — onde estão os perfis extrudados — perdem espaço.",
+      "comentario_editorial": "Número-âncora do ano para o Brasil. O ponto editorial não é o crescimento, é a composição: quem cresce é a cadeia primária, não o transformador. Esse é o tensionamento que a newsletter deve explorar."
+    },
+    {
+      "id": "NT-002",
+      "data_fato": "2026-07-13",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Petronotícias",
+      "url": "https://petronoticias.com.br/281466-2/",
+      "bloco": "brasil_em_foco",
+      "titulo": "A indústria do alumínio resiste às pressões adversas do cenário global",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Consumo de transformados: 1,883 mi t em 2025 (-0,5% vs recorde de 2024)",
+          "impacto_brasil": "Retração no elo transformador sinaliza pressão de margem para extrusoras e fabricantes de esquadria.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Brasil: 4º em bauxita, 3º em alumina, 9º em primário — posição global da cadeia",
+          "impacto_brasil": "País forte no upstream, fraco no downstream: gap estratégico que a newsletter deve nomear.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "O consumo doméstico de produtos transformados somou 1,883 milhão de toneladas em 2025, retração de 0,5% ante o recorde de 2024. O Brasil é hoje o 4º maior produtor mundial de bauxita, o 3º de alumina e o 9º de alumínio primário — mas a posição no elo transformador, onde estão os perfis extrudados, não acompanha essa liderança.",
+      "comentario_editorial": "Não usar na mesma edição de NT-001: são complementares, rendem mais separadas. NT-002 aprofunda o gap upstream/downstream que NT-001 introduz."
+    },
+    {
+      "id": "NT-003",
+      "data_fato": "2026-07-13",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Paraíba Total",
+      "url": "https://paraibatotal.com.br/2026/07/13/industria-do-aluminio-mantem-crescimento-em-2025-mas-importados-ampliam-espaco-no-mercado-brasileiro/",
+      "bloco": "empresas_operacoes",
+      "titulo": "Investimentos do setor de alumínio somam R$ 6,8 bi em 2025",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "R$ 6,8 bi investidos em 2025 vs R$ 6,1 bi em 2024; arrecadação tributária de R$ 34,8 bi",
+          "impacto_brasil": "Volume de investimento alto concentrado na cadeia primária — pouco flui para extrusão e manufatura.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Declaração de Janaina Donas (ABAL): transição energética como disputa por cadeias de valor",
+          "impacto_brasil": "Quem não transforma o metal perde a riqueza gerada pelos seus ativos — argumento direto para o extrusor.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Usar pelo ângulo a2 — a declaração de Donas é o material mais citável do trimestre para contextualizar política industrial."
+    },
+    {
+      "id": "NT-004",
+      "data_fato": "2026-07-06",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "InvestNews",
+      "url": "https://investnews.com.br/negocios/aluminio-falta-alcoa-compra-brasil/",
+      "bloco": "mercado_global",
+      "titulo": "Alcoa paga US$ 4 bi por ativos no Brasil com LME entre US$ 3.100 e 3.500/t",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "LME entre US$ 3.100–3.500/t em 2026, alta de ~20% no ano",
+          "impacto_brasil": "Tarugo mais caro comprime margem do extrusor que não consegue repassar custo imediatamente.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Bloqueio do Estreito de Ormuz: ~9% da oferta global de alumínio interrompida",
+          "impacto_brasil": "Choque de oferta global com reflexo direto no custo de matéria-prima do parque extrusor brasileiro.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Teto político chinês em ~45 mi t: China deixou de ser o fornecedor de reserva do mercado",
+          "impacto_brasil": "Sem amortecedor chinês, ciclos de alta duram mais — planejamento de estoque muda.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "Guiné implementa cotas: exportação de bauxita cai de ~200 para ~150 mi t/ano",
+          "impacto_brasil": "Brasil como 4º em bauxita se valoriza estrategicamente — e atrai mais capital para o upstream, não o downstream.",
+          "usado_em": null
+        },
+        {
+          "id": "a5",
+          "desc": "Alcoa consolida ativos no Complexo Alumar (Maranhão) pagando US$ 4 bi",
+          "impacto_brasil": "Sinal de que grandes players apostam no Brasil como hub de matéria-prima, não de produto acabado.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "Desde o início de 2026 o alumínio na LME opera entre US$ 3.100 e US$ 3.500 por tonelada, alta acumulada de quase 20% no ano. Dois fatores estruturais sustentam a curva: o bloqueio do Estreito de Ormuz, que interrompeu exportações de uma região responsável por cerca de 9% da oferta global, e o teto político da capacidade chinesa em cerca de 45 milhões de toneladas — o país deixou de funcionar como fornecedor de reserva que historicamente amortecia os ciclos de alta.",
+      "comentario_editorial": "A notícia mais rica do pool: 5 ângulos, todos com número próprio. Sustentar até 3 edições só com ela. O ângulo a5 é o mais estratégico: Alcoa aposta no Brasil como hub de matéria-prima — o oposto do que o setor transformador precisa."
+    },
+    {
+      "id": "NT-005",
+      "data_fato": "2026-03-12",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Brasil Mineral",
+      "url": "https://www.brasilmineral.com.br/noticias/preco-do-metal-segue-em-alta-com-a-guerra-no-golfo",
+      "bloco": "mercado_global",
+      "titulo": "LME alumínio atinge US$ 3.384/t com prêmio de risco geopolítico",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "LME em 6/3: US$ 3.384,50/t compra, US$ 3.446/t no contrato 3 meses",
+          "impacto_brasil": "Ponto histórico da curva de preço do trimestre — base para comparação com cotações atuais.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "Em 6 de março de 2026, o preço oficial à vista do alumínio na LME era de US$ 3.384,50 por tonelada, com o contrato de três meses fechando a US$ 3.446/t. O mercado atribuía um prêmio de risco à possibilidade de que preços mais altos da energia afetassem a viabilidade econômica das fundições.",
+      "comentario_editorial": "Usar só como marco histórico de preço em peças que tracem a evolução da LME ao longo do ano. Não tem força sozinha."
+    },
+    {
+      "id": "NT-006",
+      "data_fato": "2026-03-16",
+      "data_captura": "2026-07-21",
+      "tipo": "analise",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "CN",
+      "veiculo": "Ballesta Metal",
+      "url": "https://www.ballestametal.com/pt/2026-global-aluminum-profile-industry-panorama-and-market-in-depth-analysis.html",
+      "bloco": "mercado_global",
+      "titulo": "Panorama global de perfis de alumínio em 2026",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Estratificação do processamento: perfil arquitetônico (ef. energética) vs industrial (manufatura de alta qualidade)",
+          "impacto_brasil": "Dois mercados com lógicas distintas — o extrusor brasileiro precisa saber em qual compete.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "FONTE FRACA — comercial chinesa, possivelmente gerada. Usar apenas para o conceito de estratificação, nunca para número. Cruzar com fonte independente antes de publicar."
+    },
+    {
+      "id": "NT-007",
+      "data_fato": null,
+      "data_captura": "2026-07-21",
+      "tipo": "evergreen",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "ABAL — Projeto ELO",
+      "url": "https://abal.org.br/projetoelo/",
+      "bloco": "tecnologia_prd",
+      "titulo": "Projeto ELO: fronteiras de P&D abertas no alumínio brasileiro",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Bancos de dados de ligas para simulação de extrusão e laminação",
+          "impacto_brasil": "Extrusor que adotar modelagem digital reduz tempo de desenvolvimento de nova ferramenta em semanas.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Rastreabilidade de tarugos e sucata por sistema digital",
+          "impacto_brasil": "Pressão ESG de clientes internacionais vai exigir isso em 2–3 anos — quem não tiver perde acesso a cadeias exportadoras.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Compatibilidade da liga 6005A com estruturas de concreto",
+          "impacto_brasil": "Abre mercado de estruturas mistas alumínio-concreto — ainda sem concorrência no Brasil.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "Substituição de latão/cobre por alumínio em aplicações elétricas",
+          "impacto_brasil": "Com cobre acima de US$ 9.000/t, janela de substituição por perfil de alumínio está aberta agora.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Evergreen com validade de 365 dias. Ângulo a3 e a4 são os mais originais do pool inteiro — nenhum outro veículo está cobrindo."
+    },
+    {
+      "id": "NT-008",
+      "data_fato": "2026-06-03",
+      "data_captura": "2026-07-21",
+      "tipo": "analise",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Revista Alumínio",
+      "url": "https://www.revistaaluminio.com.br/o-que-esperar-de-2026",
+      "bloco": "empresas_operacoes",
+      "titulo": "O que esperar de 2026: perspectivas dos principais players brasileiros",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "CBA entra em 2026 com dívida alongada e previsibilidade energética (Luciano Alves, CEO)",
+          "impacto_brasil": "CBA como extrusora e como produtor de primário: decisões dela afetam preço de tarugo no mercado interno.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Alubar: 100 mil t/ano de vergalhão e 40 mil t/ano de cabos elétricos na planta norte-americana",
+          "impacto_brasil": "Empresa brasileira expandindo capacidade fora do Brasil — onde vai o alumínio produzido aqui.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Alubar recebe rating A-(bra) da Fitch, perspectiva estável",
+          "impacto_brasil": "Crédito acessível para o setor — referência para extrusoras que buscam financiamento de expansão.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "AMG investe em equipamentos apesar do cenário geopolítico adverso",
+          "impacto_brasil": "Estratégia de manter CAPEX em ciclo de incerteza — contraexemplo para quem está segurando investimento.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Fatiar por empresa: cada ângulo é uma edição diferente. Nunca dois na mesma edição. Texto precisa ser escrito — só temos os fatos, não a narrativa."
+    },
+    {
+      "id": "NT-009",
+      "data_fato": null,
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Portal do Alumínio",
+      "url": "http://portaldoaluminio.com.br/noticia/preco-aluminio-2026-tendencias-mercado",
+      "bloco": "mercado_global",
+      "titulo": "Preço do Alumínio em 2026: Tendências e Projeções",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "IA e eletrificação veicular como novos motores de demanda por alumínio",
+          "impacto_brasil": "Conceito válido mesmo com números da fonte suspeitos — confirmar com HARBOR ou CRU.",
+          "usado_em": null
+        }
+      ],
+      "status": "quarentena",
+      "texto_editado": "",
+      "comentario_editorial": "NÃO PUBLICAR. Projeção de US$ 2.700–3.000/t contradiz preços reais de NT-004 e NT-005. Conteúdo provavelmente gerado por IA. O conceito do ângulo a1 é válido — buscar fonte primária (Wood Mackenzie, CRU, LME) antes de usar."
+    },
+    {
+      "id": "NT-010",
+      "data_fato": "2026-05-05",
+      "data_captura": "2026-07-21",
+      "tipo": "regulatorio",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "LegisWeb / DOU",
+      "url": "https://www.legisweb.com.br/legislacao/?id=495320",
+      "bloco": "politica_comercial_normas",
+      "titulo": "SECEX abre revisão de antidumping sobre chapas de alumínio offset da China",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Revisão da medida sobre NCM 3701.30.21/31 — termômetro da postura brasileira",
+          "impacto_brasil": "O Brasil age em defesa comercial no alumínio, mas não em perfis extrudados — assimetria que o setor precisa questionar.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Valor é contextual, não autônomo. Combinar com NT-016 para construir a pauta do vazio regulatório em extrudados."
+    },
+    {
+      "id": "NT-011",
+      "data_fato": "2026-02-12",
+      "data_captura": "2026-07-21",
+      "tipo": "regulatorio",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "InfoMoney / Reuters",
+      "url": "https://www.infomoney.com.br/economia/gecex-camex-aprova-medida-antidumping-sobre-aco-laminado-originario-da-china/",
+      "bloco": "politica_comercial_normas",
+      "titulo": "Camex aprova antidumping definitivo sobre laminados de aço da China",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Precedente: Brasil age rápido no aço e não age no alumínio manufaturado",
+          "impacto_brasil": "Assimetria de proteção entre setores — argumento para a ABAL/AFEAL levarem o pleito de extrudados.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Fora da janela de 120 dias. Usar só como precedente comparativo quando a pauta de defesa comercial em extrudados evoluir."
+    },
+    {
+      "id": "NT-012",
+      "data_fato": null,
+      "data_captura": "2026-07-21",
+      "tipo": "evergreen",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Expar Alumínio",
+      "url": "https://www.exparaluminio.com.br/noticias/normas-tecnicas-para-esquadrias-de-aluminio-o-que-todo-arquiteto-precisa-saber",
+      "bloco": "politica_comercial_normas",
+      "titulo": "NBR 10821, 15575, 7199 e 10820: o mapa normativo das esquadrias",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "NBR 10821: desempenho de portas e janelas externas (água, vento, impacto, operação)",
+          "impacto_brasil": "Especificação correta da norma define qual perfil serve para qual projeto — erro aqui gera retrabalho e perda de cliente.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "NBR 15575: desempenho global de edificações habitacionais — esquadria como componente crítico",
+          "impacto_brasil": "Construtoras de médio/grande porte já exigem comprovação de NBR 15575 — fabricante sem ensaio perde licitação.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Normas satélite: NBR 7199 (vidros) e NBR 10820 (portas e janelas de correr)",
+          "impacto_brasil": "Sistema normativo interligado — conformidade parcial não protege o fabricante juridicamente.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Evergreen. Bom para o slot de fundo. Cada norma rende uma edição própria se tratada com profundidade — ideal para edições com quinzena fraca em notícia."
+    },
+    {
+      "id": "NT-013",
+      "data_fato": "2026-02-13",
+      "data_captura": "2026-07-21",
+      "tipo": "analise",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Alumiconte",
+      "url": "https://www.alumiconte.com.br/pt/tendencias-de-esquadrias-de-aluminio-em-2026-o-que-esta-puxando-a-demanda-e-como-o-serralheiro-se-prepara/",
+      "bloco": "brasil_em_foco",
+      "titulo": "Esquadrias crescem 19,8% em 2024 — fachadas e sistemas lideram",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Faturamento: R$ 10,53 bi (2024) vs R$ 8,79 bi (2023) — alta de 19,8%",
+          "impacto_brasil": "Esquadria crescendo ~4x mais que a construção civil: oportunidade de mercado clara para o fabricante.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Fachadas: +13,8%; sistemas: +10,9% em 2024",
+          "impacto_brasil": "Alta de fachadas puxa demanda por perfis de maior complexidade e valor — upgrade natural do portfólio.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "383.483 unidades lançadas e 400.547 vendidas no residencial vertical em 2024",
+          "impacto_brasil": "Volume de lançamentos sustenta demanda de esquadrias por 2–3 anos à frente do período de entrega.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "Nova exigência: prazo, acabamento, documentação, previsibilidade como critérios de escolha",
+          "impacto_brasil": "Comprador de obra não escolhe mais só por preço — abre vantagem competitiva para quem tem processo.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "O setor de esquadrias de alumínio faturou R$ 10,53 bilhões em 2024, alta de 19,8% sobre os R$ 8,79 bilhões de 2023. O crescimento supera em quase quatro vezes a expansão da construção civil, de 4,3% no mesmo período. Fachadas lideraram o consumo com crescimento de 13,8%, seguidas pelos sistemas com 10,9%.",
+      "comentario_editorial": "Dado mais importante do pool para o elo transformador. Fora da janela de 120 dias, mas o número de NT-014 confirma com fonte mais recente — usar NT-014 como âncora e esta como profundidade."
+    },
+    {
+      "id": "NT-014",
+      "data_fato": "2026-04-08",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Jornal do Brás",
+      "url": "https://jornaldobras.com.br/noticia/115280/fesqua-amplia-area-de-exposicao-em-25-e-espera-receber-60-mil-visitantes-em-2026",
+      "bloco": "brasil_em_foco",
+      "titulo": "Fesqua 2026 amplia área em 25% com 700 marcas",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Esquadrias (+19,8%) crescem ~4x mais que a construção civil (+4,3% em 2024 / +0,5% em 2025)",
+          "impacto_brasil": "Setor descolado do ciclo da construção: argumento para investimento mesmo em macro adverso.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Fesqua 2026: 700 marcas, área 25% maior, simultaneidade com Vetro, EBRATS e Feipat",
+          "impacto_brasil": "Maior feira do setor como termômetro de confiança e ponto de lançamento de produtos novos.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "A Fesqua 2026, marcada para setembro em São Paulo, amplia sua área de exposição em 25% e deve reunir 700 marcas expositoras. Segundo a AFEAL, o setor de esquadrias de alumínio faturou R$ 10,53 bilhões em 2024, alta de 19,8%, superando o crescimento da construção civil em quase quatro vezes.",
+      "comentario_editorial": "Melhor item para o Gap 1. Dentro da janela, dado confirmado pela AFEAL, e traz o contexto da Fesqua como gancho de atualidade."
+    },
+    {
+      "id": "NT-015",
+      "data_fato": "2026-03-04",
+      "data_captura": "2026-07-21",
+      "tipo": "regulatorio",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Importe Melhor",
+      "url": "https://importemelhor.com.br/classificacao-fiscal-na-importacao-de-perfis-de-aluminio/",
+      "bloco": "politica_comercial_normas",
+      "titulo": "NCM 7604.21.00 e 7604.29.20: como a Receita classifica perfis importados",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "7604.21.00 (perfis ocos) e 7604.29.20 (perfis não ocos): definição e diferença",
+          "impacto_brasil": "Classificação errada gera multa e atraso — erro comum na importação direta por extrusoras.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Como usar as NCMs para monitorar volume de perfil importado ao longo do tempo",
+          "impacto_brasil": "Ferramenta de inteligência competitiva gratuita: qualquer gestor pode acompanhar o que entra pelo Comex Stat.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Conteúdo perene de alto valor prático. O ângulo a2 — usar NCM como inteligência de mercado — é o mais original e útil para o gestor industrial."
+    },
+    {
+      "id": "NT-016",
+      "data_fato": "2026-04-02",
+      "data_captura": "2026-07-21",
+      "tipo": "regulatorio",
+      "idioma_original": "en",
+      "requer_traducao": true,
+      "origem": "AU",
+      "veiculo": "Anti-Dumping Commission (Austrália)",
+      "url": "https://www.industry.gov.au/anti-dumping-commission/current-cases-and-electronic-public-record-epr/700",
+      "bloco": "politica_comercial_normas",
+      "titulo": "Austrália abre investigação antidumping sobre extrudados de alumínio da China (Caso 700)",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Abertura em 2/4/2026: escopo cobre ligas séries 1,2,3,5,6,7; parede >0,5mm; máx 27kg/m; seção ≤421mm",
+          "impacto_brasil": "Escopo idêntico ao que seria necessário para um pleito brasileiro — serve de modelo técnico.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "NCMs cobertas: 7604.10, 7604.21, 7604.29, 7608.10, 7608.20, 7610.10, 7610.90",
+          "impacto_brasil": "As mesmas NCMs pelo qual o extrudado chinês entra no Brasil hoje, sem barreira equivalente.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "EUA (desde 2011), UE (desde 2021) e Austrália (2026) — três grandes mercados barrando extrudados chineses",
+          "impacto_brasil": "Com três destinos fechados, o Brasil se torna rota natural de desvio — sem medida, o impacto chega em meses.",
+          "usado_em": null
+        },
+        {
+          "id": "a4",
+          "desc": "Recomendação final: até 11/6/2026; decisão ministerial em até 30 dias após",
+          "impacto_brasil": "Resultado já deve ter saído — buscar a decisão final é a próxima rodada de apuração.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "A Austrália abriu em 2 de abril de 2026 investigação antidumping sobre extrudados de alumínio da China. O escopo cobre perfis das ligas das séries 1, 2, 3, 5, 6 e 7, acabamento bruto, mecânico, anodizado ou pintado, espessura de parede acima de 0,5 mm, peso máximo de 27 kg por metro e seção que caiba em círculo de 421 mm — as mesmas categorias que chegam ao Brasil pelas NCMs 7604 e 7610 hoje sem barreira equivalente.",
+      "comentario_editorial": "PAUTA MAIS FORTE DO POOL. Combinar ângulo a3 com NT-010 e NT-011 para construir a série: 'enquanto o mundo se protege, o Brasil não tem medida'. O resultado da investigação australiana (decisão esperada em jul/2026) é a próxima apuração prioritária."
+    },
+    {
+      "id": "NT-017",
+      "data_fato": "2026-06-01",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Contramarco",
+      "url": "https://www.contramarco.com/post/fesqua-2026-destaca-rob%C3%B4s-intelig%C3%AAncia-artificial-e-automa%C3%A7%C3%A3o-como-resposta-%C3%A0-falta-de-m%C3%A3o-de-obra",
+      "bloco": "empresas_operacoes",
+      "titulo": "Fesqua 2026: robôs e IA como resposta ao gargalo de mão de obra",
+      "peso": "alta",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "AFEAL: automação é solução parcial — cresce demanda por operador especializado, não desaparece",
+          "impacto_brasil": "Automação sem qualificação não resolve: quem investir em máquina precisa investir em treinamento junto.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "Academia AFEAL + SENAI: formação técnica como estratégia setorial",
+          "impacto_brasil": "Canal de qualificação acessível — custo de treinar é menor que custo de retrabalho por operador sem preparo.",
+          "usado_em": null
+        },
+        {
+          "id": "a3",
+          "desc": "Voilàp Brasil e equipamentos integrados com IA na Fesqua",
+          "impacto_brasil": "Primeiro contato do fabricante de esquadria com automação assistida — tendência que chega ao médio porte.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "Segundo Fernando Rosa, gerente-geral da AFEAL, a automação é alternativa importante para reduzir o gargalo de mão de obra qualificada no setor de esquadrias — mas é solução parcial. Em vez de eliminar operadores, a automação eleva a demanda por profissionais especializados. A entidade investe em capacitação via Academia AFEAL e parceria com o SENAI.",
+      "comentario_editorial": "Dentro da janela, material declaratório sólido. Ângulo a1 tem o contraponto mais valioso: automação e qualificação são complementares, não substitutos."
+    },
+    {
+      "id": "NT-018",
+      "data_fato": "2026-06-12",
+      "data_captura": "2026-07-21",
+      "tipo": "noticia",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "AFEAL",
+      "url": "https://afeal.com.br/",
+      "bloco": "politica_comercial_normas",
+      "titulo": "AFEAL implementa PSQ de Portas e Janelas de Correr no PBQP-H",
+      "peso": "media",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "PSQ como instrumento contra a não conformidade intencional no setor",
+          "impacto_brasil": "Produto fora de norma que entra em obra prejudica toda a cadeia — PSQ é defesa coletiva do setor.",
+          "usado_em": null
+        },
+        {
+          "id": "a2",
+          "desc": "O que é não conformidade intencional e como identificar no perfil",
+          "impacto_brasil": "Guia prático para o comprador de alumínio distinguir perfil conforme de perfil adulterado.",
+          "usado_em": null
+        }
+      ],
+      "status": "pendente_apuracao",
+      "texto_editado": "",
+      "comentario_editorial": "PENDENTE: há três notícias na home da AFEAL (12/06, 11/06, 29/05) cujos títulos não foram extraídos. Requer leitura manual antes de publicar. O tema PSQ/não conformidade é forte e pouco coberto pela imprensa setorial."
+    },
+    {
+      "id": "NT-019",
+      "data_fato": null,
+      "data_captura": "2026-07-21",
+      "tipo": "evergreen",
+      "idioma_original": "pt",
+      "requer_traducao": false,
+      "origem": "BR",
+      "veiculo": "Fesqua / AFEAL",
+      "url": "https://fesqua.com.br/encontro-afeal/",
+      "bloco": "empresas_operacoes",
+      "titulo": "Encontro AFEAL na Fesqua 2026 (09–12/09): agenda e oportunidades",
+      "peso": "baixa",
+      "angulos": [
+        {
+          "id": "a1",
+          "desc": "Comitê de Mercado de Extrudados da ABAL participa da programação — canal para dados de capacidade",
+          "impacto_brasil": "Único fórum público onde os dados de extrusão são discutidos — participar ou cobrir é obrigatório.",
+          "usado_em": null
+        }
+      ],
+      "status": "disponivel",
+      "texto_editado": "",
+      "comentario_editorial": "Valor operacional: o Comitê de Extrudados da ABAL é a porta de entrada para resolver o Gap 2 (dados de capacidade de extrusão). Publicar perto de setembro como convite de cobertura."
+    }
+  ]
+}

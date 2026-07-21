@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "versao": "2.0",
+    "periodicidade": "quinzenal",
+    "itens_por_edicao": 8,
+    "mix": {
+      "global_estrategico": {
+        "qtd": 2,
+        "blocos": ["mercado_global", "politica_comercial_normas"],
+        "janela_dias": [0, 120]
+      },
+      "brasil_em_foco": {
+        "qtd": 2,
+        "blocos": ["brasil_em_foco"],
+        "janela_dias": [0, 120]
+      },
+      "tecnologia_prd": {
+        "qtd": 1,
+        "blocos": ["tecnologia_prd"],
+        "janela_dias": [0, 365]
+      },
+      "empresas_operacoes": {
+        "qtd": 1,
+        "blocos": ["empresas_operacoes"],
+        "janela_dias": [0, 120]
+      },
+      "aplicacoes": {
+        "qtd": 1,
+        "blocos": ["aplicacoes_mercados_fim"],
+        "janela_dias": [0, 365]
+      },
+      "linha_perfil": {
+        "qtd": 1,
+        "origem": "linhas-perfis.json"
+      }
+    },
+    "intervalo_minimo_reaparicao": 2,
+    "nota_reposicao": "Se faltar item num slot, puxar do bloco mais próximo por peso. Nunca deixar buraco."
+  },
+  "edicoes": []
+}

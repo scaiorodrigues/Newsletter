@@ -1,0 +1,12 @@
+{
+  "name": "newsletter-aluminio-em-perfil",
+  "version": "2.0.0",
+  "description": "Curadoria quinzenal global sobre alumínio e manufatura de perfis — impacto Brasil",
+  "scripts": {
+    "validar":        "node scripts/validar.js",
+    "validar:fix":    "node scripts/validar.js --fix",
+    "montar":         "node scripts/montar-edicao.js",
+    "montar:commit":  "node scripts/montar-edicao.js --commit"
+  },
+  "license": "UNLICENSED"
+}
