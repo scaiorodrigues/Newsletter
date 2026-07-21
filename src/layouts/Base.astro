@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Curadoria quinzenal global sobre alumínio e manufatura de perfis — impacto Brasil.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Newsletter Alumínio em Perfil"
+      href={new URL('rss.xml', Astro.site)}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="site-title" href="/">Alumínio em Perfil</a>
+        <p class="site-sub">Curadoria quinzenal · impacto Brasil</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        Curadoria e edição:
+        <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener">FromTech</a>
+        · <a href="/rss.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

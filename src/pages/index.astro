@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const edicoes = (await getCollection('edicoes')).sort(
+  (a, b) => b.data.edicao - a.data.edicao,
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<Base title="Alumínio em Perfil — Newsletter">
+  {
+    edicoes.length === 0 ? (
+      <p>Nenhuma edição publicada ainda.</p>
+    ) : (
+      <ul class="edicao-lista">
+        {edicoes.map((ed) => (
+          <li class="edicao-item">
+            <a href={`/edicoes/${ed.id}`}>
+              <span class="edicao-num">Edição {ed.data.edicao}</span>
+              <div class="edicao-titulo">
+                {fmt(ed.data.data)}
+              </div>
+              <span class="edicao-data">Ler edição →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

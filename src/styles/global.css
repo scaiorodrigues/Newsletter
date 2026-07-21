@@ -1,0 +1,167 @@
+/*
+  Design system — Newsletter Alumínio em Perfil
+  Baseado na spec visual do README: industrial, seco, sem sombra,
+  sem gradiente, border-radius máximo 2px. O setor é industrial —
+  o visual deve ser seco.
+*/
+
+:root {
+  /* Paleta por bloco temático */
+  --bloco-mercado-global: #2B2D33;
+  --bloco-tecnologia-prd: #1F4E79;
+  --bloco-empresas-operacoes: #6E7377;
+  --bloco-politica-comercial-normas: #7A2E2E;
+  --bloco-aplicacoes-mercados-fim: #2F5D50;
+  --bloco-brasil-em-foco: #B8860B;
+
+  /* Base */
+  --fundo: #F4F4F2;         /* off-white industrial */
+  --superficie: #FFFFFF;
+  --titulo: #1A1A1A;
+  --texto: #2B2D33;
+  --meta: #767676;          /* metadados */
+  --linha: #E2E2DE;
+  --acento: #1F4E79;        /* azul aço, cor institucional padrão */
+
+  --fonte: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+           Roboto, Helvetica, Arial, sans-serif;
+  --largura-max: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--acento); text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
+
+.wrap {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Cabeçalho do site ─────────────────────────────────────────── */
+.site-header {
+  border-bottom: 2px solid var(--titulo);
+  margin-bottom: 40px;
+}
+.site-header .wrap {
+  padding-top: 28px;
+  padding-bottom: 20px;
+}
+.site-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--titulo);
+  text-decoration: none;
+  display: inline-block;
+}
+.site-sub {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--meta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Rodapé ────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--linha);
+  margin-top: 60px;
+  padding: 28px 0 48px;
+  font-size: 13px;
+  color: var(--meta);
+}
+
+/* ── Lista de edições (home) ───────────────────────────────────── */
+.edicao-lista { list-style: none; margin: 0; padding: 0; }
+.edicao-item {
+  border-top: 1px solid var(--linha);
+  padding: 20px 0;
+}
+.edicao-item:last-child { border-bottom: 1px solid var(--linha); }
+.edicao-item a {
+  text-decoration: none;
+  color: var(--titulo);
+  display: block;
+}
+.edicao-item a:hover .edicao-titulo { text-decoration: underline; }
+.edicao-num {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+}
+.edicao-titulo {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--titulo);
+  margin: 4px 0 2px;
+}
+.edicao-data { font-size: 13px; color: var(--meta); }
+
+/* ── Corpo de uma edição (markdown renderizado) ────────────────── */
+.edicao-head {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--titulo);
+}
+.edicao-head .num {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+}
+
+.prosa h1 { display: none; } /* o H1 do markdown é redundante com o head */
+.prosa h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--titulo);
+  margin: 40px 0 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--acento); /* tarja lateral da spec */
+}
+.prosa p { margin: 12px 0; }
+.prosa strong { color: var(--titulo); }
+.prosa a { word-break: break-word; }
+
+/* Blockquotes: notas editoriais (📝) e avisos de tradução (⚠️) */
+.prosa blockquote {
+  margin: 16px 0;
+  padding: 10px 16px;
+  background: var(--superficie);
+  border-left: 3px solid var(--meta);
+  color: var(--meta);
+  font-size: 15px;
+}
+.prosa blockquote p { margin: 4px 0; }
+
+.prosa hr {
+  border: none;
+  border-top: 1px solid var(--linha);
+  margin: 36px 0;
+}
+
+/* Comentários HTML de rastreio (id/bloco/veículo) ficam ocultos */
+.prosa { }
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .prosa h2 { font-size: 20px; }
+}
