@@ -28,12 +28,37 @@ const { title, description = 'Curadoria quinzenal global sobre alumínio e manuf
       href={new URL('rss.xml', Astro.site)}
     />
     <title>{title}</title>
+    <script is:inline>
+      // Define o tema antes da primeira pintura, evitando flash.
+      (function () {
+        try {
+          var salvo = localStorage.getItem('tema');
+          var tema =
+            salvo ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light');
+          document.documentElement.dataset.theme = tema;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="site-title" href="/">Alumínio em Perfil</a>
-        <p class="site-sub">Curadoria quinzenal · impacto Brasil</p>
+        <div>
+          <a class="site-title" href="/">Alumínio em Perfil</a>
+          <p class="site-sub">Curadoria quinzenal · impacto Brasil</p>
+        </div>
+        <button
+          id="tema-toggle"
+          class="tema-toggle"
+          type="button"
+          aria-label="Alternar tema claro e escuro"
+        >
+          <span class="tema-escuro">☾ Escuro</span>
+          <span class="tema-claro">☀ Claro</span>
+        </button>
       </div>
     </header>
 
@@ -48,5 +73,20 @@ const { title, description = 'Curadoria quinzenal global sobre alumínio e manuf
         · <a href="/rss.xml">RSS</a>
       </div>
     </footer>
+
+    <script is:inline>
+      var btn = document.getElementById('tema-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var atual =
+            document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+          var proximo = atual === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = proximo;
+          try {
+            localStorage.setItem('tema', proximo);
+          } catch (e) {}
+        });
+      }
+    </script>
   </body>
 </html>

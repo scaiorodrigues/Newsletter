@@ -28,6 +28,37 @@
   --largura-max: 720px;
 }
 
+/*
+  Tema escuro. Aplicado de duas formas:
+  1. Preferência do sistema (prefers-color-scheme), a menos que o leitor
+     tenha escolhido explicitamente o claro.
+  2. Escolha manual pelo botão (data-theme="dark"), que sempre vence.
+  As cores de bloco são de marca e permanecem iguais nos dois temas.
+*/
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --fundo: #17181B;
+    --superficie: #202227;
+    --titulo: #F4F4F2;
+    --texto: #D4D6DA;
+    --meta: #9A9DA3;
+    --linha: #2E3136;
+    --acento: #6AA3D8;
+  }
+}
+
+:root[data-theme='dark'] {
+  --fundo: #17181B;
+  --superficie: #202227;
+  --titulo: #F4F4F2;
+  --texto: #D4D6DA;
+  --meta: #9A9DA3;
+  --linha: #2E3136;
+  --acento: #6AA3D8;
+}
+
+html { color-scheme: light dark; }
+
 * { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -59,6 +90,38 @@ a:hover { text-decoration: underline; }
 .site-header .wrap {
   padding-top: 28px;
   padding-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Botão de alternância de tema */
+.tema-toggle {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  font-family: var(--fonte);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--meta);
+  background: transparent;
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  padding: 7px 11px;
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
+}
+.tema-toggle:hover { color: var(--titulo); border-color: var(--meta); }
+.tema-toggle .tema-claro { display: none; }
+.tema-toggle .tema-escuro { display: inline; }
+:root[data-theme='dark'] .tema-toggle .tema-escuro { display: none; }
+:root[data-theme='dark'] .tema-toggle .tema-claro { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .tema-toggle .tema-escuro { display: none; }
+  :root:not([data-theme='light']) .tema-toggle .tema-claro { display: inline; }
 }
 .site-title {
   font-size: 22px;
