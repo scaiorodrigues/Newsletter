@@ -1,9 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Ajuste `site` para o domínio final da newsletter antes de publicar.
-// É usado para gerar URLs absolutas no feed RSS e nos metadados.
+// `site` é o domínio final do hub de newsletters da FromTech.
+// Usado para gerar URLs absolutas no feed RSS e nos metadados.
+// Ajuste se o subdomínio escolhido for diferente.
 export default defineConfig({
-  site: 'https://newsletter-aluminio.netlify.app',
+  site: 'https://newsletter.fromtech.com.br',
   trailingSlash: 'ignore',
 });

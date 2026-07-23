@@ -4,9 +4,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  rss?: string;
 }
 
-const { title, description = 'Curadoria quinzenal global sobre alumínio e manufatura de perfis — impacto Brasil.' } = Astro.props;
+const {
+  title,
+  description = 'Newsletters técnicas da FromTech para o setor industrial.',
+  rss,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,14 +24,18 @@ const { title, description = 'Curadoria quinzenal global sobre alumínio e manuf
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
     />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Newsletter Alumínio em Perfil"
-      href={new URL('rss.xml', Astro.site)}
-    />
+    {
+      rss && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={title}
+          href={new URL(rss, Astro.site)}
+        />
+      )
+    }
     <title>{title}</title>
     <script is:inline>
       // Define o tema antes da primeira pintura, evitando flash.
@@ -47,8 +56,10 @@ const { title, description = 'Curadoria quinzenal global sobre alumínio e manuf
     <header class="site-header">
       <div class="wrap">
         <div>
-          <a class="site-title" href="/">Alumínio em Perfil</a>
-          <p class="site-sub">Curadoria quinzenal · impacto Brasil</p>
+          <a class="brand" href="https://fromtech.com.br" target="_blank" rel="noopener"
+            >FROMTECH</a
+          >
+          <a class="site-title" href="/">Newsletters</a>
         </div>
         <button
           id="tema-toggle"
@@ -69,8 +80,10 @@ const { title, description = 'Curadoria quinzenal global sobre alumínio e manuf
     <footer class="site-footer">
       <div class="wrap">
         Curadoria e edição:
-        <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener">FromTech</a>
-        · <a href="/rss.xml">RSS</a>
+        <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener"
+          >FromTech</a
+        >
+        {rss && <> · <a href={rss}>RSS</a></>}
       </div>
     </footer>
 

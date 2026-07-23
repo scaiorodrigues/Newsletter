@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getNewsletter, splitId, fmtData } from '../../lib/newsletters';
+
+export async function getStaticPaths() {
+  const todas = await getCollection('edicoes');
+  return todas.map((entry) => {
+    const { newsletter, edicao } = splitId(entry.id);
+    return { params: { newsletter, edicao }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const { newsletter } = Astro.params;
+const info = getNewsletter(newsletter)!;
+const { Content } = await render(entry);
+---
+
+<Base title={`Edição ${entry.data.edicao} — ${info.titulo}`} rss={`/${newsletter}/rss.xml`}>
+  <p class="volta"><a href={`/${newsletter}`}>← {info.titulo}</a></p>
+
+  <div class="edicao-head">
+    <span class="num">Edição {entry.data.edicao}</span>
+    <div class="edicao-titulo">{fmtData(entry.data.data)}</div>
+  </div>
+
+  <article class="prosa">
+    <Content />
+  </article>
+</Base>
