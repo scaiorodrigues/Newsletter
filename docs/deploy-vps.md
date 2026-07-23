@@ -18,10 +18,16 @@ afeta o restante do site em `/var/www/fromtech`.
 
 Adicione um `location` ao `server { ... }` de `fromtech.com.br`.
 
+> **Use o modificador `^~`.** Ele faz o nginx parar de avaliar `location`
+> regex quando este prefixo casa. Sem isso, um bloco por extensão comum
+> (ex.: `location ~* \.(css|js|png)$`) tem prioridade sobre o prefixo e
+> intercepta os assets de `/newsletter/_astro/`, servindo-os do diretório
+> errado → CSS/JS com 404 e a página sem estilo.
+
 **Se o `root` do server já for `/var/www/fromtech`:**
 
 ```nginx
-location /newsletter/ {
+location ^~ /newsletter/ {
     try_files $uri $uri/ $uri/index.html =404;
 }
 ```
@@ -29,14 +35,14 @@ location /newsletter/ {
 **Caso o site seja servido de outro diretório (use `alias`):**
 
 ```nginx
-location /newsletter/ {
+location ^~ /newsletter/ {
     alias /var/www/fromtech/newsletter/;
     index index.html;
     try_files $uri $uri/ $uri/index.html =404;
 }
 
 # (opcional) cache longo para os assets versionados do Astro
-location /newsletter/_astro/ {
+location ^~ /newsletter/_astro/ {
     alias /var/www/fromtech/newsletter/_astro/;
     expires 1y;
     add_header Cache-Control "public, immutable";
