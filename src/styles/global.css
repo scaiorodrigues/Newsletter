@@ -221,14 +221,29 @@ body { border-top: 3px solid var(--marca); } /* faixa de marca FromTech */
 }
 
 .prosa h1 { display: none; } /* o H1 do markdown é redundante com o head */
+
+/* Divisor de tópico (GLOBAL ESTRATÉGICO, BRASIL EM FOCO, …) */
 .prosa h2 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--acento);
+  margin: 56px 0 4px;
+  padding-top: 14px;
+  border-top: 2px solid var(--acento);
+}
+.prosa h2:first-of-type { margin-top: 24px; }
+
+/* Título de cada notícia (tarja lateral da spec) */
+.prosa h3 {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
   color: var(--titulo);
-  margin: 40px 0 12px;
+  margin: 32px 0 12px;
   padding-left: 12px;
-  border-left: 4px solid var(--acento); /* tarja lateral da spec */
+  border-left: 4px solid var(--acento);
 }
 .prosa p { margin: 12px 0; }
 .prosa strong { color: var(--titulo); }

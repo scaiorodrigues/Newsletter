@@ -49,7 +49,17 @@
       ],
       "status": "parcial",
       "texto_editado": "A receita da indústria brasileira do alumínio chegou a R$ 168 bilhões em 2025, alta de 10,6%, segundo o Anuário Estatístico da ABAL divulgado em julho de 2026. A produção de alumínio primário subiu 8,5%, para 1,18 milhão de toneladas, o maior volume desde 2013. A fatia de importados no mercado nacional passou de 11,2% para 12%, com a China respondendo por 26,9% do volume estrangeiro. O superávit de US$ 3,3 bilhões é sustentado quase inteiramente por matérias-primas, enquanto os itens de maior valor agregado — onde estão os perfis extrudados — perdem espaço.",
-      "comentario_editorial": "Número-âncora do ano para o Brasil. O ponto editorial não é o crescimento, é a composição: quem cresce é a cadeia primária, não o transformador. Esse é o tensionamento que a newsletter deve explorar."
+      "comentario_editorial": "Número-âncora do ano para o Brasil. O ponto editorial não é o crescimento, é a composição: quem cresce é a cadeia primária, não o transformador. Esse é o tensionamento que a newsletter deve explorar.",
+      "relacionadas": [
+        {
+          "id": "NT-016",
+          "nota": "a investigação antidumping australiana, que mostra a barreira que o Brasil ainda não tem contra o extrudado importado"
+        },
+        {
+          "id": "NT-014",
+          "nota": "o contraste com as esquadrias, elo transformador que cresce descolado da cadeia primária"
+        }
+      ]
     },
     {
       "id": "NT-002",
@@ -160,7 +170,13 @@
       ],
       "status": "parcial",
       "texto_editado": "Desde o início de 2026 o alumínio na LME opera entre US$ 3.100 e US$ 3.500 por tonelada, alta acumulada de quase 20% no ano. Dois fatores estruturais sustentam a curva: o bloqueio do Estreito de Ormuz, que interrompeu exportações de uma região responsável por cerca de 9% da oferta global, e o teto político da capacidade chinesa em cerca de 45 milhões de toneladas — o país deixou de funcionar como fornecedor de reserva que historicamente amortecia os ciclos de alta.",
-      "comentario_editorial": "A notícia mais rica do pool: 5 ângulos, todos com número próprio. Sustentar até 3 edições só com ela. O ângulo a5 é o mais estratégico: Alcoa aposta no Brasil como hub de matéria-prima — o oposto do que o setor transformador precisa."
+      "comentario_editorial": "A notícia mais rica do pool: 5 ângulos, todos com número próprio. Sustentar até 3 edições só com ela. O ângulo a5 é o mais estratégico: Alcoa aposta no Brasil como hub de matéria-prima — o oposto do que o setor transformador precisa.",
+      "relacionadas": [
+        {
+          "id": "NT-008",
+          "nota": "o preço do tarugo puxado pela LME é o que define as margens dos players brasileiros"
+        }
+      ]
     },
     {
       "id": "NT-005",
@@ -296,7 +312,13 @@
       ],
       "status": "parcial",
       "texto_editado": "",
-      "comentario_editorial": "Fatiar por empresa: cada ângulo é uma edição diferente. Nunca dois na mesma edição. Texto precisa ser escrito — só temos os fatos, não a narrativa."
+      "comentario_editorial": "Fatiar por empresa: cada ângulo é uma edição diferente. Nunca dois na mesma edição. Texto precisa ser escrito — só temos os fatos, não a narrativa.",
+      "relacionadas": [
+        {
+          "id": "NT-004",
+          "nota": "o custo do tarugo definido pela LME, que pressiona as decisões desses players"
+        }
+      ]
     },
     {
       "id": "NT-009",
@@ -482,7 +504,17 @@
       ],
       "status": "parcial",
       "texto_editado": "A Fesqua 2026, marcada para setembro em São Paulo, amplia sua área de exposição em 25% e deve reunir 700 marcas expositoras. Segundo a AFEAL, o setor de esquadrias de alumínio faturou R$ 10,53 bilhões em 2024, alta de 19,8%, superando o crescimento da construção civil em quase quatro vezes.",
-      "comentario_editorial": "Melhor item para o Gap 1. Dentro da janela, dado confirmado pela AFEAL, e traz o contexto da Fesqua como gancho de atualidade."
+      "comentario_editorial": "Melhor item para o Gap 1. Dentro da janela, dado confirmado pela AFEAL, e traz o contexto da Fesqua como gancho de atualidade.",
+      "relacionadas": [
+        {
+          "id": "NT-017",
+          "nota": "a mesma Fesqua 2026, pelo ângulo da automação como resposta ao gargalo de mão de obra"
+        },
+        {
+          "id": "NT-013",
+          "nota": "o dado de 19,8% de crescimento das esquadrias, aqui com fonte mais recente"
+        }
+      ]
     },
     {
       "id": "NT-015",
@@ -556,7 +588,21 @@
       ],
       "status": "parcial",
       "texto_editado": "A Austrália abriu em 2 de abril de 2026 investigação antidumping sobre extrudados de alumínio da China. O escopo cobre perfis das ligas das séries 1, 2, 3, 5, 6 e 7, acabamento bruto, mecânico, anodizado ou pintado, espessura de parede acima de 0,5 mm, peso máximo de 27 kg por metro e seção que caiba em círculo de 421 mm — as mesmas categorias que chegam ao Brasil pelas NCMs 7604 e 7610 hoje sem barreira equivalente.",
-      "comentario_editorial": "PAUTA MAIS FORTE DO POOL. Combinar ângulo a3 com NT-010 e NT-011 para construir a série: 'enquanto o mundo se protege, o Brasil não tem medida'. O resultado da investigação australiana (decisão esperada em jul/2026) é a próxima apuração prioritária."
+      "comentario_editorial": "PAUTA MAIS FORTE DO POOL. Combinar ângulo a3 com NT-010 e NT-011 para construir a série: 'enquanto o mundo se protege, o Brasil não tem medida'. O resultado da investigação australiana (decisão esperada em jul/2026) é a próxima apuração prioritária.",
+      "relacionadas": [
+        {
+          "id": "NT-001",
+          "nota": "a fatia crescente de importados que a medida australiana mostra como o Brasil poderia conter"
+        },
+        {
+          "id": "NT-010",
+          "nota": "a revisão antidumping da SECEX em chapas offset — o Brasil age em alguns produtos, não em extrudados"
+        },
+        {
+          "id": "NT-011",
+          "nota": "o precedente do aço, em que a Camex agiu rápido"
+        }
+      ]
     },
     {
       "id": "NT-017",
@@ -593,7 +639,13 @@
       ],
       "status": "parcial",
       "texto_editado": "Segundo Fernando Rosa, gerente-geral da AFEAL, a automação é alternativa importante para reduzir o gargalo de mão de obra qualificada no setor de esquadrias — mas é solução parcial. Em vez de eliminar operadores, a automação eleva a demanda por profissionais especializados. A entidade investe em capacitação via Academia AFEAL e parceria com o SENAI.",
-      "comentario_editorial": "Dentro da janela, material declaratório sólido. Ângulo a1 tem o contraponto mais valioso: automação e qualificação são complementares, não substitutos."
+      "comentario_editorial": "Dentro da janela, material declaratório sólido. Ângulo a1 tem o contraponto mais valioso: automação e qualificação são complementares, não substitutos.",
+      "relacionadas": [
+        {
+          "id": "NT-014",
+          "nota": "a mesma Fesqua 2026, pelo ângulo do crescimento do setor de esquadrias"
+        }
+      ]
     },
     {
       "id": "NT-018",

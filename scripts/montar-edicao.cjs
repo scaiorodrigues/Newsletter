@@ -12,6 +12,7 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { renderEdicaoMd, relacaoTexto } = require('./render.cjs');
 
 const ROOT   = path.join(__dirname, '..');
 const POOL   = path.join(ROOT, 'data', 'pool.json');
@@ -86,7 +87,8 @@ function escolher(slotNome, n, blocos, maxDias) {
       idade:  c.idade,
       desc:   c.ang.desc,
       impacto:c.ang.impacto_brasil,
-      peso:   c.item.peso
+      peso:   c.item.peso,
+      comentario: c.item.comentario_editorial
     });
     itensUsados.add(c.item.id);
     blocosUsados[c.item.bloco] = (blocosUsados[c.item.bloco] || 0) + 1;
@@ -123,6 +125,14 @@ const LABEL = {
   aplicacoes_reposicao:         'APLICAÇÕES (REPOSIÇÃO)',
 };
 
+// Conjunto de itens já publicados (edições anteriores + esta) — base do
+// campo "Relação". Definido aqui para servir tanto à prévia quanto ao md.
+const postados = new Set();
+for (const ed of edicoes.edicoes) for (const it of ed.itens) postados.add(it.id);
+for (const s of selecao) postados.add(s.id);
+
+const semMarkup = (t) => t.replace(/\*\*/g, '').replace(/\*/g, '');
+
 console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 console.log(` Edição ${numero} — sugestão de pauta  `);
 console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`);
@@ -131,12 +141,18 @@ for (const s of selecao) {
   const idade  = s.idade === null ? 'perene' : `${s.idade}d`;
   const flag   = s.trad ? ` 🌐 traduzir (${s.idioma?.toUpperCase()})` : '';
   const origem = s.origem !== 'BR' ? ` [${s.origem}]` : '';
+  const item   = pool.itens.find(i => i.id === s.id);
+  const rel    = relacaoTexto(item, pool, postados);
   console.log(`[${LABEL[s.slot] || s.slot}]`);
   console.log(`  ${s.id}/${s.angulo} · ${idade} · ${s.bloco}${origem}${flag}`);
   console.log(`  Título:  ${s.titulo}`);
   console.log(`  Ângulo:  ${s.desc}`);
   console.log(`  BR:      ${s.impacto}`);
-  console.log(`  Veículo: ${s.veiculo}\n`);
+  console.log(`  Veículo: ${s.veiculo}`);
+  if (rel)          console.log(`  Relação: ${semMarkup(rel)}`);
+  // Prévia de validação — NÃO vai para a página publicada.
+  if (s.comentario) console.log(`  📝 Nota (só validação): ${s.comentario}`);
+  console.log('');
 }
 
 console.log(`[LINHA DE PERFIL]`);
@@ -183,41 +199,13 @@ const dir  = path.join(ROOT, 'content', 'aluminio');
 fs.mkdirSync(dir, { recursive: true });
 const slug = `ed-${String(numero).padStart(3,'0')}`;
 
-const linhas_md = selecao.flatMap(s => {
-  const item = pool.itens.find(i => i.id === s.id);
-  const ang  = item.angulos.find(a => a.id === s.angulo);
-  const trad = item.requer_traducao ? '\n> ⚠️ **Requer tradução** — texto abaixo é a versão editada em PT.\n' : '';
-  return [
-    `## [${LABEL[s.slot] || s.slot}] ${item.titulo}`,
-    ``,
-    `<!-- ${item.id}/${ang.id} · ${item.bloco} · ${item.veiculo} -->`,
-    trad,
-    `**Ângulo:** ${ang.desc}`,
-    `**Impacto Brasil:** ${ang.impacto_brasil}`,
-    ``,
-    item.texto_editado || '_[redigir]_',
-    ``,
-    `**Fonte:** [${item.veiculo}](${item.url})`,
-    item.comentario_editorial ? `\n> 📝 ${item.comentario_editorial}` : '',
-    ``,
-    `---`,
-    ``
-  ];
+const md = renderEdicaoMd({
+  numero,
+  dataISO: hoje.toISOString().slice(0, 10),
+  itens:   selecao.map(s => ({ id: s.id, angulo: s.angulo, slot: s.slot })),
+  linhaId: linhaDisp ? linhaDisp.id : null,
+  pool, linhas, postados
 });
 
-const md = [
-  '---',
-  `edicao: ${numero}`,
-  `data: ${hoje.toISOString().slice(0,10)}`,
-  '---',
-  '',
-  `# Edição ${numero} — ${hoje.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}`,
-  '',
-  ...linhas_md,
-  '',
-  `_Curadoria e edição: [FromTech](https://www.linkedin.com/company/121613929/)_`,
-  ''
-].join('\n');
-
 fs.writeFileSync(path.join(dir, `${slug}.md`), md);
-console.log(`✓ Gravado. content/edicoes/${slug}.md criado.\n`);
+console.log(`✓ Gravado. content/aluminio/${slug}.md criado.\n`);
