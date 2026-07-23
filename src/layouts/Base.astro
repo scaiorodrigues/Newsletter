@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+import { link } from '../lib/newsletters';
+
+interface Props {
+  title: string;
+  description?: string;
+  rss?: string;
+}
+
+const {
+  title,
+  description = 'Newsletters técnicas da FromTech para o setor industrial.',
+  rss,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+    />
+    {
+      rss && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={title}
+          href={new URL(link(rss), Astro.site)}
+        />
+      )
+    }
+    <title>{title}</title>
+    <script is:inline>
+      // Define o tema antes da primeira pintura, evitando flash.
+      (function () {
+        try {
+          var salvo = localStorage.getItem('tema');
+          var tema =
+            salvo ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light');
+          document.documentElement.dataset.theme = tema;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <div>
+          <a class="brand" href="https://fromtech.com.br" target="_blank" rel="noopener"
+            >FROMTECH</a
+          >
+          <a class="site-title" href={link('')}>Newsletters</a>
+        </div>
+        <button
+          id="tema-toggle"
+          class="tema-toggle"
+          type="button"
+          aria-label="Alternar tema claro e escuro"
+        >
+          <span class="tema-escuro">☾ Escuro</span>
+          <span class="tema-claro">☀ Claro</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        Curadoria e edição:
+        <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener"
+          >FromTech</a
+        >
+        {rss && <> · <a href={link(rss)}>RSS</a></>}
+      </div>
+    </footer>
+
+    <script is:inline>
+      var btn = document.getElementById('tema-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var atual =
+            document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+          var proximo = atual === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = proximo;
+          try {
+            localStorage.setItem('tema', proximo);
+          } catch (e) {}
+        });
+      }
+    </script>
+  </body>
+</html>

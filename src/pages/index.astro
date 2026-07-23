@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { newsletters, edicoesDe, fmtData, link } from '../lib/newsletters';
+
+const cards = await Promise.all(
+  newsletters.map(async (n) => {
+    const eds = await edicoesDe(n.slug);
+    return { ...n, total: eds.length, ultima: eds[0]?.data.data ?? null };
+  }),
+);
+---
+
+<Base title="Newsletters — FromTech">
+  <h1 class="hub-h1">Newsletters</h1>
+  <p class="hub-lead">Curadoria técnica da FromTech para o setor industrial.</p>
+
+  <ul class="edicao-lista">
+    {
+      cards.map((n) => (
+        <li class="edicao-item">
+          <a href={link(n.slug)}>
+            <span class="edicao-num">{n.periodicidade ?? 'Newsletter'}</span>
+            <div class="edicao-titulo">{n.titulo}</div>
+            <p class="hub-desc">{n.descricao}</p>
+            <span class="edicao-data">
+              {n.total} {n.total === 1 ? 'edição' : 'edições'}
+              {n.ultima ? ` · última em ${fmtData(n.ultima)}` : ''} →
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

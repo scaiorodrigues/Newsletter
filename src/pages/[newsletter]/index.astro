@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import { newsletters, getNewsletter, edicoesDe, splitId, fmtData, link } from '../../lib/newsletters';
+
+export async function getStaticPaths() {
+  return newsletters.map((n) => ({ params: { newsletter: n.slug } }));
+}
+
+const { newsletter } = Astro.params;
+const info = getNewsletter(newsletter)!;
+const eds = await edicoesDe(newsletter);
+---
+
+<Base title={`${info.titulo} — FromTech`} description={info.descricao} rss={`/${newsletter}/rss.xml`}>
+  <p class="volta"><a href={link('')}>← Todas as newsletters</a></p>
+  <h1 class="hub-h1">{info.titulo}</h1>
+  <p class="hub-lead">{info.descricao}</p>
+
+  {
+    eds.length === 0 ? (
+      <p>Nenhuma edição publicada ainda.</p>
+    ) : (
+      <ul class="edicao-lista">
+        {eds.map((ed) => {
+          const { edicao } = splitId(ed.id);
+          return (
+            <li class="edicao-item">
+              <a href={link(`${newsletter}/${edicao}`)}>
+                <span class="edicao-num">Edição {ed.data.edicao}</span>
+                <div class="edicao-titulo">{fmtData(ed.data.data)}</div>
+                <span class="edicao-data">Ler edição →</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+</Base>

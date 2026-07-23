@@ -2,11 +2,19 @@
   "name": "newsletter-aluminio-em-perfil",
   "version": "2.0.0",
   "description": "Curadoria quinzenal global sobre alumínio e manufatura de perfis — impacto Brasil",
+  "type": "module",
   "scripts": {
-    "validar":        "node scripts/validar.js",
-    "validar:fix":    "node scripts/validar.js --fix",
-    "montar":         "node scripts/montar-edicao.js",
-    "montar:commit":  "node scripts/montar-edicao.js --commit"
+    "validar":        "node scripts/validar.cjs",
+    "validar:fix":    "node scripts/validar.cjs --fix",
+    "montar":         "node scripts/montar-edicao.cjs",
+    "montar:commit":  "node scripts/montar-edicao.cjs --commit",
+    "dev":            "astro dev",
+    "build":          "astro build",
+    "preview":        "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.13.0",
+    "@astrojs/rss": "^4.0.11"
   },
   "license": "UNLICENSED"
 }

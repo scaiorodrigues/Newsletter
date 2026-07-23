@@ -178,8 +178,8 @@ fs.writeFileSync(POOL,    JSON.stringify(pool,    null, 2) + '\n');
 fs.writeFileSync(EDICOES, JSON.stringify(edicoes, null, 2) + '\n');
 fs.writeFileSync(LINHAS,  JSON.stringify(linhas,  null, 2) + '\n');
 
-// Markdown da edição
-const dir  = path.join(ROOT, 'content', 'edicoes');
+// Markdown da edição — namespaced por newsletter (esta é "aluminio")
+const dir  = path.join(ROOT, 'content', 'aluminio');
 fs.mkdirSync(dir, { recursive: true });
 const slug = `ed-${String(numero).padStart(3,'0')}`;
 
@@ -213,7 +213,10 @@ const md = [
   '',
   `# Edição ${numero} — ${hoje.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}`,
   '',
-  ...linhas_md
+  ...linhas_md,
+  '',
+  `_Curadoria e edição: [FromTech](https://www.linkedin.com/company/121613929/)_`,
+  ''
 ].join('\n');
 
 fs.writeFileSync(path.join(dir, `${slug}.md`), md);

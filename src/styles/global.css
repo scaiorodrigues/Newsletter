@@ -1,0 +1,260 @@
+/*
+  Design system — Newsletter Alumínio em Perfil
+  Baseado na spec visual do README: industrial, seco, sem sombra,
+  sem gradiente, border-radius máximo 2px. O setor é industrial —
+  o visual deve ser seco.
+*/
+
+:root {
+  /* Paleta por bloco temático */
+  --bloco-mercado-global: #2B2D33;
+  --bloco-tecnologia-prd: #1F4E79;
+  --bloco-empresas-operacoes: #6E7377;
+  --bloco-politica-comercial-normas: #7A2E2E;
+  --bloco-aplicacoes-mercados-fim: #2F5D50;
+  --bloco-brasil-em-foco: #B8860B;
+
+  /* Base */
+  --fundo: #F4F4F2;         /* off-white industrial */
+  --superficie: #FFFFFF;
+  --titulo: #1A1A1A;
+  --texto: #2B2D33;
+  --meta: #767676;          /* metadados */
+  --linha: #E2E2DE;
+  --marca: #FF6B1A;         /* laranja FromTech — decorativo */
+  --acento: #B5470E;        /* laranja escurecido p/ contraste em fundo claro */
+
+  --fonte: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+           Roboto, Helvetica, Arial, sans-serif;
+  --largura-max: 720px;
+}
+
+/*
+  Tema escuro. Aplicado de duas formas:
+  1. Preferência do sistema (prefers-color-scheme), a menos que o leitor
+     tenha escolhido explicitamente o claro.
+  2. Escolha manual pelo botão (data-theme="dark"), que sempre vence.
+  As cores de bloco são de marca e permanecem iguais nos dois temas.
+*/
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --fundo: #17181B;
+    --superficie: #202227;
+    --titulo: #F4F4F2;
+    --texto: #D4D6DA;
+    --meta: #9A9DA3;
+    --linha: #2E3136;
+    --marca: #FF6B1A;
+    --acento: #FF8A47;
+  }
+}
+
+:root[data-theme='dark'] {
+  --fundo: #17181B;
+  --superficie: #202227;
+  --titulo: #F4F4F2;
+  --texto: #D4D6DA;
+  --meta: #9A9DA3;
+  --linha: #2E3136;
+  --marca: #FF6B1A;
+  --acento: #FF8A47;
+}
+
+html { color-scheme: light dark; }
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--acento); text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
+
+.wrap {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Cabeçalho do site ─────────────────────────────────────────── */
+body { border-top: 3px solid var(--marca); } /* faixa de marca FromTech */
+.site-header {
+  border-bottom: 2px solid var(--titulo);
+  margin-bottom: 40px;
+}
+.brand {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: var(--marca);
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+.brand:hover { text-decoration: none; opacity: 0.85; }
+.site-header .wrap {
+  padding-top: 28px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Botão de alternância de tema */
+.tema-toggle {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  font-family: var(--fonte);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--meta);
+  background: transparent;
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  padding: 7px 11px;
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
+}
+.tema-toggle:hover { color: var(--titulo); border-color: var(--meta); }
+.tema-toggle .tema-claro { display: none; }
+.tema-toggle .tema-escuro { display: inline; }
+:root[data-theme='dark'] .tema-toggle .tema-escuro { display: none; }
+:root[data-theme='dark'] .tema-toggle .tema-claro { display: inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .tema-toggle .tema-escuro { display: none; }
+  :root:not([data-theme='light']) .tema-toggle .tema-claro { display: inline; }
+}
+.site-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--titulo);
+  text-decoration: none;
+  display: inline-block;
+}
+.site-title:hover { text-decoration: none; color: var(--acento); }
+
+/* ── Hub / cabeçalhos de seção ─────────────────────────────────── */
+.volta { margin: 0 0 8px; font-size: 14px; }
+.hub-h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--titulo);
+  margin: 8px 0 6px;
+}
+.hub-lead {
+  font-size: 16px;
+  color: var(--meta);
+  margin: 0 0 28px;
+  max-width: 60ch;
+}
+.hub-desc {
+  font-size: 15px;
+  color: var(--texto);
+  margin: 6px 0 8px;
+  max-width: 60ch;
+}
+
+/* ── Rodapé ────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--linha);
+  margin-top: 60px;
+  padding: 28px 0 48px;
+  font-size: 13px;
+  color: var(--meta);
+}
+
+/* ── Lista de edições (home) ───────────────────────────────────── */
+.edicao-lista { list-style: none; margin: 0; padding: 0; }
+.edicao-item {
+  border-top: 1px solid var(--linha);
+  padding: 20px 0;
+}
+.edicao-item:last-child { border-bottom: 1px solid var(--linha); }
+.edicao-item a {
+  text-decoration: none;
+  color: var(--titulo);
+  display: block;
+}
+.edicao-item a:hover .edicao-titulo { text-decoration: underline; }
+.edicao-num {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+}
+.edicao-titulo {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--titulo);
+  margin: 4px 0 2px;
+}
+.edicao-data { font-size: 13px; color: var(--meta); }
+
+/* ── Corpo de uma edição (markdown renderizado) ────────────────── */
+.edicao-head {
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--titulo);
+}
+.edicao-head .num {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acento);
+}
+
+.prosa h1 { display: none; } /* o H1 do markdown é redundante com o head */
+.prosa h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--titulo);
+  margin: 40px 0 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--acento); /* tarja lateral da spec */
+}
+.prosa p { margin: 12px 0; }
+.prosa strong { color: var(--titulo); }
+.prosa a { word-break: break-word; }
+
+/* Blockquotes: notas editoriais (📝) e avisos de tradução (⚠️) */
+.prosa blockquote {
+  margin: 16px 0;
+  padding: 10px 16px;
+  background: var(--superficie);
+  border-left: 3px solid var(--meta);
+  color: var(--meta);
+  font-size: 15px;
+}
+.prosa blockquote p { margin: 4px 0; }
+
+.prosa hr {
+  border: none;
+  border-top: 1px solid var(--linha);
+  margin: 36px 0;
+}
+
+/* Comentários HTML de rastreio (id/bloco/veículo) ficam ocultos */
+.prosa { }
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .prosa h2 { font-size: 20px; }
+}
