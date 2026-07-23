@@ -1,10 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// `site` é o domínio final do hub de newsletters da FromTech.
-// Usado para gerar URLs absolutas no feed RSS e nos metadados.
-// Ajuste se o subdomínio escolhido for diferente.
+// `site`  = domínio raiz onde o hub é publicado.
+// `base`  = subcaminho sob o domínio. Em subpasta (fromtech.com.br/newsletters)
+//           o deploy define BASE_PATH=/newsletters; em subdomínio, fica "/".
+// Os links internos usam import.meta.env.BASE_URL (ver src/lib/newsletters.ts),
+// então o mesmo código serve nos dois modos sem alteração manual.
 export default defineConfig({
-  site: 'https://newsletter.fromtech.com.br',
+  site: process.env.SITE_URL || 'https://fromtech.com.br',
+  base: process.env.BASE_PATH || '/',
   trailingSlash: 'ignore',
 });

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { newsletters, edicoesDe, fmtData } from '../lib/newsletters';
+import { newsletters, edicoesDe, fmtData, link } from '../lib/newsletters';
 
 const cards = await Promise.all(
   newsletters.map(async (n) => {
@@ -18,7 +18,7 @@ const cards = await Promise.all(
     {
       cards.map((n) => (
         <li class="edicao-item">
-          <a href={`/${n.slug}`}>
+          <a href={link(n.slug)}>
             <span class="edicao-num">{n.periodicidade ?? 'Newsletter'}</span>
             <div class="edicao-titulo">{n.titulo}</div>
             <p class="hub-desc">{n.descricao}</p>

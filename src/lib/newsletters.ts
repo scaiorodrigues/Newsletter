@@ -30,3 +30,12 @@ export async function edicoesDe(slug: string) {
 
 export const fmtData = (d: Date) =>
   d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+
+// Gera URLs internas respeitando o base (subpasta) do deploy.
+// import.meta.env.BASE_URL vale "/" em dev/subdomínio e "/newsletter/" na
+// subpasta — assim os mesmos templates funcionam nos dois modos.
+export function link(path = ''): string {
+  const base = import.meta.env.BASE_URL;
+  const b = base.endsWith('/') ? base : base + '/';
+  return b + path.replace(/^\//, '');
+}

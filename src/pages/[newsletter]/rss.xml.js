@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { newsletters, getNewsletter, edicoesDe, splitId } from '../../lib/newsletters';
+import { newsletters, getNewsletter, edicoesDe, splitId, link } from '../../lib/newsletters';
 
 export async function getStaticPaths() {
   return newsletters.map((n) => ({ params: { newsletter: n.slug } }));
@@ -17,7 +17,7 @@ export async function GET(context) {
     items: eds.map((ed) => ({
       title: `Edição ${ed.data.edicao}`,
       pubDate: ed.data.data,
-      link: `/${slug}/${splitId(ed.id).edicao}/`,
+      link: link(`${slug}/${splitId(ed.id).edicao}/`),
     })),
     customData: `<language>pt-br</language>`,
   });

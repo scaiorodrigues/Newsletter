@@ -1,0 +1,48 @@
+name: Deploy newsletter (VPS)
+
+# Publica o hub em fromtech.com.br/newsletter a cada push na main.
+# Também pode ser disparado manualmente na aba Actions.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Evita deploys simultâneos sobrepostos.
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build (subpasta /newsletter)
+        run: npm run build
+        env:
+          BASE_PATH: /newsletter
+          SITE_URL: https://fromtech.com.br
+
+      - name: Configurar chave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 31.97.19.180 >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy (rsync)
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
+            dist/ deploy@31.97.19.180:/var/www/fromtech/newsletter/
