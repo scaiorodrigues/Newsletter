@@ -39,6 +39,10 @@ rastreabilidade histórica.
 
 ## Mix de cada edição (8 itens)
 
+> **Regra fixa: toda edição tem exatamente 8 itens** — 7 notícias + 1 Linha de
+> Perfil. Nenhuma edição publica com menos de 8. Se um slot não fecha pelo bloco
+> ideal, a reposição preenche; a Linha de Perfil é obrigatória e nunca fica vazia.
+
 | Slot | Qtd | Blocos elegíveis | Janela |
 |---|---|---|---|
 | Global estratégico | 2 | mercado_global, politica_comercial_normas | 0–120 dias |

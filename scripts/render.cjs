@@ -102,14 +102,20 @@ function renderEdicaoMd({ numero, dataISO, itens, linhaId, pool, linhas, postado
     linhasMd.push(...blocoItem(entry, pool, postados));
   }
 
-  // Linha de perfil (seção própria), quando houver.
+  // Linha de perfil (seção própria), quando houver — completa o 8º item.
   if (linhaId) {
     const l = linhas.linhas.find((x) => x.id === linhaId);
     if (l) {
+      const fonte = /^https?:\/\//.test(l.fonte || '')
+        ? `[${l.empresa}](${l.fonte})`
+        : l.fonte || '';
       linhasMd.push('## LINHA DE PERFIL', '');
       linhasMd.push(`### ${l.empresa} — ${l.linha}`, '');
       if (l.angulo_editorial) linhasMd.push(l.angulo_editorial, '');
-      if (l.fonte) linhasMd.push(`**Fonte:** ${l.fonte}`, '');
+      if (l.aplicacao_alvo) linhasMd.push(`**Aplicação:** ${l.aplicacao_alvo}`, '');
+      if (l.liga_tempera) linhasMd.push(`**Liga / têmpera:** ${l.liga_tempera}`, '');
+      if (l.diferencial_tecnico) linhasMd.push(`**Diferencial técnico:** ${l.diferencial_tecnico}`, '');
+      if (fonte) linhasMd.push(`**Fonte:** ${fonte}`, '');
     }
   }
 
