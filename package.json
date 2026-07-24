@@ -8,6 +8,7 @@
     "validar:fix":    "node scripts/validar.cjs --fix",
     "montar":         "node scripts/montar-edicao.cjs",
     "montar:commit":  "node scripts/montar-edicao.cjs --commit",
+    "regerar-md":     "node scripts/regerar-md.cjs",
     "dev":            "astro dev",
     "build":          "astro build",
     "preview":        "astro preview"
