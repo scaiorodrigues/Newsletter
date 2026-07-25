@@ -1,5 +1,7 @@
 # Newsletter Alumínio em Perfil
 
+https://www.fromtech.com.br/newsletter/aluminio
+
 Curadoria quinzenal sobre alumínio e manufatura de perfis — escopo global,
 lente editorial no impacto para o mercado brasileiro.
 
