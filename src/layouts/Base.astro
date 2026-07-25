@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { link } from '../lib/newsletters';
+import assinatura from '../../data/assinatura.json';
 
 interface Props {
   title: string;
@@ -13,6 +14,10 @@ const {
   description = 'Newsletters técnicas da FromTech para o setor industrial.',
   rss,
 } = Astro.props;
+
+const assinarUrl = assinatura.url;
+const whatsappUrl = assinatura.whatsapp;
+const assinantes = assinatura.assinantes;
 ---
 
 <!doctype html>
@@ -62,29 +67,64 @@ const {
           >
           <a class="site-title" href={link('')}>Newsletters</a>
         </div>
-        <button
-          id="tema-toggle"
-          class="tema-toggle"
-          type="button"
-          aria-label="Alternar tema claro e escuro"
-        >
-          <span class="tema-escuro">☾ Escuro</span>
-          <span class="tema-claro">☀ Claro</span>
-        </button>
+        <div class="header-acoes">
+          <a class="btn-assinar" href={assinarUrl}>Assinar</a>
+          <button
+            id="tema-toggle"
+            class="tema-toggle"
+            type="button"
+            aria-label="Alternar tema claro e escuro"
+          >
+            <span class="tema-escuro">☾ Escuro</span>
+            <span class="tema-claro">☀ Claro</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="wrap">
       <slot />
+
+      <section class="assinar-cta">
+        <h2 class="assinar-titulo">Receba cada edição no seu e-mail</h2>
+        <p class="assinar-sub">
+          Curadoria quinzenal sobre alumínio e manufatura de perfis — direto na
+          sua caixa de entrada.
+        </p>
+        <div class="assinar-botoes">
+          <a class="btn-assinar btn-grande" href={assinarUrl}>Assinar a newsletter</a>
+          {
+            whatsappUrl && (
+              <a
+                class="btn-whats"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                Receba no WhatsApp
+              </a>
+            )
+          }
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="wrap">
-        Curadoria e edição:
-        <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener"
-          >FromTech</a
-        >
-        {rss && <> · <a href={link(rss)}>RSS</a></>}
+        {
+          assinantes != null && (
+            <p class="assinantes">
+              <strong>{assinantes.toLocaleString('pt-BR')}</strong> assinantes
+            </p>
+          )
+        }
+        <p class="footer-credito">
+          Curadoria e edição:
+          <a href="https://www.linkedin.com/company/121613929/" target="_blank" rel="noopener"
+            >FromTech</a
+          >
+          {rss && <> · <a href={link(rss)}>RSS</a></>}
+        </p>
       </div>
     </footer>
 

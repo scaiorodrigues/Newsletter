@@ -172,11 +172,21 @@ body { border-top: 3px solid var(--marca); } /* faixa de marca FromTech */
 /* ── Rodapé ────────────────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--linha);
-  margin-top: 60px;
+  margin-top: 0;
   padding: 28px 0 48px;
   font-size: 13px;
   color: var(--meta);
 }
+.site-footer .assinantes {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--texto);
+}
+.site-footer .assinantes strong {
+  color: var(--marca);
+  font-weight: 800;
+}
+.site-footer .footer-credito { margin: 0; }
 
 /* ── Lista de edições (home) ───────────────────────────────────── */
 .edicao-lista { list-style: none; margin: 0; padding: 0; }
@@ -269,7 +279,80 @@ body { border-top: 3px solid var(--marca); } /* faixa de marca FromTech */
 /* Comentários HTML de rastreio (id/bloco/veículo) ficam ocultos */
 .prosa { }
 
+/* ── Assinatura: botões e CTA ──────────────────────────────────── */
+.header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
+
+/* Botão primário de assinatura (marca FromTech) */
+.btn-assinar {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--marca);
+  border: 1px solid var(--marca);
+  border-radius: 2px;
+  padding: 8px 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btn-assinar:hover { text-decoration: none; opacity: 0.88; }
+.btn-grande { font-size: 14px; padding: 13px 26px; letter-spacing: 0.04em; }
+
+/* Botão do canal do WhatsApp */
+.btn-whats {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--titulo);
+  background: transparent;
+  border: 1px solid var(--linha);
+  border-radius: 2px;
+  padding: 12px 24px;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-whats:hover { text-decoration: none; border-color: var(--marca); color: var(--marca); }
+
+/* Faixa de chamada para assinatura, no fim do conteúdo */
+.assinar-cta {
+  margin: 64px 0 0;
+  padding: 36px 0 8px;
+  border-top: 2px solid var(--marca);
+  text-align: center;
+}
+.assinar-titulo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--titulo);
+  margin: 0 0 8px;
+}
+.assinar-sub {
+  font-size: 15px;
+  color: var(--meta);
+  margin: 0 auto 22px;
+  max-width: 46ch;
+}
+.assinar-botoes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 480px) {
   body { font-size: 16px; }
   .prosa h2 { font-size: 20px; }
+  .site-title { font-size: 20px; }
+  .btn-assinar { padding: 7px 12px; }
 }
