@@ -9,6 +9,7 @@
     "montar":         "node scripts/montar-edicao.cjs",
     "montar:commit":  "node scripts/montar-edicao.cjs --commit",
     "regerar-md":     "node scripts/regerar-md.cjs",
+    "indices":        "node scripts/indices.cjs",
     "dev":            "astro dev",
     "build":          "astro build",
     "preview":        "astro preview"

@@ -209,3 +209,7 @@ const md = renderEdicaoMd({
 
 fs.writeFileSync(path.join(dir, `${slug}.md`), md);
 console.log(`✓ Gravado. content/aluminio/${slug}.md criado.\n`);
+
+// Atualiza os índices (notícias usadas / por tipo)
+require('./indices.cjs').gerar();
+console.log('✓ Índices atualizados (noticias-usadas.md, noticias-por-tipo.md).\n');
