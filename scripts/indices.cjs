@@ -91,9 +91,64 @@ function gerarPorTipo() {
   return out.join('\n');
 }
 
+// ── linhas-perfis.md ────────────────────────────────────────────────────────
+function gerarLinhas() {
+  const obrig = linhas._meta.campos_obrigatorios_para_validacao || [];
+  const rotulo = {
+    empresa: 'empresa', linha: 'linha', tipo: 'tipo',
+    liga_tempera: 'liga/têmpera', diferencial_tecnico: 'diferencial técnico',
+    aplicacao_alvo: 'aplicação', fonte: 'fonte', data_confirmada: 'data confirmada',
+  };
+  const faltam = (l) => obrig.filter((c) => !l[c]).map((c) => rotulo[c] || c);
+
+  const validadas = linhas.linhas.filter((l) => l.validado).length;
+  const rascunhos = linhas.linhas.filter((l) => l.status === 'rascunho').length;
+  const meta = linhas._meta.meta_estoque_minimo;
+
+  const out = ['# Linhas de perfil — banco para seleção', '', avisoGerado, ''];
+  out.push(
+    `Estoque: **${validadas} validadas** · ${rascunhos} rascunhos · meta mínima ${meta}.`,
+    '',
+    'Seção fixa da newsletter: **1 linha por edição**. Use esta lista para revisar',
+    'e escolher as próximas — cada rascunho mostra o que falta para validar.',
+    '',
+  );
+
+  const ficha = (l) => {
+    const f = faltam(l);
+    out.push(`### ${l.id} — ${l.empresa}: ${l.linha}`);
+    out.push(`- \`${l.pais || '?'} · ${l.tipo || '?'} · status ${l.status}${l.validado ? ' · validado' : ''}\``);
+    if (l.aplicacao_alvo)        out.push(`- **Aplicação:** ${l.aplicacao_alvo}`);
+    if (l.liga_tempera)          out.push(`- **Liga/têmpera:** ${l.liga_tempera}`);
+    if (l.diferencial_tecnico)   out.push(`- **Diferencial:** ${l.diferencial_tecnico}`);
+    if (l.norma_associada)       out.push(`- **Norma:** ${l.norma_associada}`);
+    if (l.angulo_editorial)      out.push(`- **Ângulo editorial:** ${l.angulo_editorial}`);
+    if (l.fonte)                 out.push(`- **Fonte:** ${l.fonte}`);
+    out.push(`- **Falta para validar:** ${f.length ? f.join(', ') : '✓ nada (pronta)'}`);
+    if (l.obs)                   out.push(`- **Obs:** ${l.obs}`);
+    out.push('');
+  };
+
+  const disponiveis = linhas.linhas.filter((l) => l.edicao === null || l.edicao === undefined);
+  const usadas = linhas.linhas.filter((l) => l.edicao != null);
+
+  out.push('## Disponíveis para próximas edições', '');
+  if (!disponiveis.length) out.push('_Nenhuma disponível._', '');
+  disponiveis.forEach(ficha);
+
+  out.push('## Já publicadas', '');
+  if (!usadas.length) out.push('_Nenhuma ainda._', '');
+  for (const l of usadas) {
+    out.push(`- **${l.id}** — ${l.empresa}: ${l.linha} — edição ${l.edicao}`);
+  }
+  out.push('');
+  return out.join('\n');
+}
+
 function gerar() {
   fs.writeFileSync(path.join(ROOT, 'noticias-usadas.md'), gerarUsadas());
   fs.writeFileSync(path.join(ROOT, 'noticias-por-tipo.md'), gerarPorTipo());
+  fs.writeFileSync(path.join(ROOT, 'linhas-perfis.md'), gerarLinhas());
 }
 
 module.exports = { gerar };
