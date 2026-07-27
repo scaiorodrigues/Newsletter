@@ -47,7 +47,7 @@ function relacaoTexto(item, pool, postados) {
 }
 
 // Bloco de uma notícia (título em ###, campos como parágrafos próprios).
-function blocoItem(entry, pool, postados) {
+function blocoItem(entry, pool, postados, linhas) {
   const item = pool.itens.find((i) => i.id === entry.id);
   if (!item) return [`### (item ${entry.id} não encontrado)`, ''];
   const ang = item.angulos.find((a) => a.id === entry.angulo) || {};
@@ -65,6 +65,15 @@ function blocoItem(entry, pool, postados) {
 
   const rel = relacaoTexto(item, pool, postados);
   if (rel) out.push(`**Relação:** ${rel}`, '');
+
+  // Linha(s) de perfil citada(s) na notícia — sempre por último.
+  const citadas = (item.linhas_citadas || [])
+    .map((id) => (linhas ? linhas.linhas.find((l) => l.id === id) : null))
+    .filter(Boolean);
+  if (citadas.length) {
+    const txt = citadas.map((l) => `${l.empresa} — ${l.linha}`).join('; ');
+    out.push(`**Linha de perfil citada:** ${txt}`, '');
+  }
 
   return out;
 }
@@ -99,7 +108,7 @@ function renderEdicaoMd({ numero, dataISO, itens, linhaId, pool, linhas, postado
       linhasMd.push(`## ${t}`, '');
       topicoAtual = t;
     }
-    linhasMd.push(...blocoItem(entry, pool, postados));
+    linhasMd.push(...blocoItem(entry, pool, postados, linhas));
   }
 
   // Linha de perfil (seção própria), quando houver — completa o 8º item.
