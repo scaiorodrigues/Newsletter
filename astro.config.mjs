@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import rehypeExternalLinks from 'rehype-external-links';
 
 // `site`  = domínio raiz onde o hub é publicado.
 // `base`  = subcaminho sob o domínio. Em subpasta (fromtech.com.br/newsletters)
@@ -10,4 +11,11 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://fromtech.com.br',
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'ignore',
+  markdown: {
+    // Links das notícias (fontes) abrem em nova aba, para o leitor não
+    // sair da edição. Aplica-se só aos links do conteúdo markdown.
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+    ],
+  },
 });

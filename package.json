@@ -4,19 +4,20 @@
   "description": "Curadoria quinzenal global sobre alumínio e manufatura de perfis — impacto Brasil",
   "type": "module",
   "scripts": {
-    "validar":        "node scripts/validar.cjs",
-    "validar:fix":    "node scripts/validar.cjs --fix",
-    "montar":         "node scripts/montar-edicao.cjs",
-    "montar:commit":  "node scripts/montar-edicao.cjs --commit",
-    "regerar-md":     "node scripts/regerar-md.cjs",
-    "indices":        "node scripts/indices.cjs",
-    "dev":            "astro dev",
-    "build":          "astro build",
-    "preview":        "astro preview"
+    "validar": "node scripts/validar.cjs",
+    "validar:fix": "node scripts/validar.cjs --fix",
+    "montar": "node scripts/montar-edicao.cjs",
+    "montar:commit": "node scripts/montar-edicao.cjs --commit",
+    "regerar-md": "node scripts/regerar-md.cjs",
+    "indices": "node scripts/indices.cjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.11",
     "astro": "^5.13.0",
-    "@astrojs/rss": "^4.0.11"
+    "rehype-external-links": "^3.0.0"
   },
   "license": "UNLICENSED"
 }
