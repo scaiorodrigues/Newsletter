@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /**
- * indices.cjs — gera dois índices em markdown a partir dos dados:
- *   - noticias-usadas.md   : ângulos já publicados, por edição + estado
- *   - noticias-por-tipo.md  : inventário de notícias agrupado por tópico
+ * indices.cjs — gera os índices de curadoria em curadoria/ :
+ *   - noticias-disponiveis.md : notícias com ângulos livres p/ próximas edições
+ *   - noticias-usadas.md      : ângulos já publicados, por edição + estado
+ *   - noticias-por-tipo.md    : inventário de notícias agrupado por tópico
+ *   - linhas-perfis.md        : banco de linhas de perfil para seleção
  *
  * São documentos GERADOS. Rode `npm run indices` para atualizar; não editar
  * à mão. montar-edicao.cjs também os regenera ao publicar uma edição.
@@ -10,7 +12,8 @@
 const fs   = require('fs');
 const path = require('path');
 
-const ROOT    = path.join(__dirname, '..');
+const ROOT      = path.join(__dirname, '..');
+const CURADORIA = path.join(ROOT, 'curadoria');
 const pool    = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pool.json'), 'utf8'));
 const edicoes = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'edicoes.json'), 'utf8'));
 const linhas  = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'linhas-perfis.json'), 'utf8'));
@@ -91,9 +94,105 @@ function gerarPorTipo() {
   return out.join('\n');
 }
 
+// ── linhas-perfis.md ────────────────────────────────────────────────────────
+function gerarLinhas() {
+  const obrig = linhas._meta.campos_obrigatorios_para_validacao || [];
+  const rotulo = {
+    empresa: 'empresa', linha: 'linha', tipo: 'tipo',
+    liga_tempera: 'liga/têmpera', diferencial_tecnico: 'diferencial técnico',
+    aplicacao_alvo: 'aplicação', fonte: 'fonte', data_confirmada: 'data confirmada',
+  };
+  const faltam = (l) => obrig.filter((c) => !l[c]).map((c) => rotulo[c] || c);
+
+  const validadas = linhas.linhas.filter((l) => l.validado).length;
+  const rascunhos = linhas.linhas.filter((l) => l.status === 'rascunho').length;
+  const meta = linhas._meta.meta_estoque_minimo;
+
+  const out = ['# Linhas de perfil — banco para seleção', '', avisoGerado, ''];
+  out.push(
+    `Estoque: **${validadas} validadas** · ${rascunhos} rascunhos · meta mínima ${meta}.`,
+    '',
+    'Seção fixa da newsletter: **1 linha por edição**. Use esta lista para revisar',
+    'e escolher as próximas — cada rascunho mostra o que falta para validar.',
+    '',
+  );
+
+  const ficha = (l) => {
+    const f = faltam(l);
+    out.push(`### ${l.id} — ${l.empresa}: ${l.linha}`);
+    out.push(`- \`${l.pais || '?'} · ${l.tipo || '?'} · status ${l.status}${l.validado ? ' · validado' : ''}\``);
+    if (l.aplicacao_alvo)        out.push(`- **Aplicação:** ${l.aplicacao_alvo}`);
+    if (l.liga_tempera)          out.push(`- **Liga/têmpera:** ${l.liga_tempera}`);
+    if (l.diferencial_tecnico)   out.push(`- **Diferencial:** ${l.diferencial_tecnico}`);
+    if (l.norma_associada)       out.push(`- **Norma:** ${l.norma_associada}`);
+    if (l.angulo_editorial)      out.push(`- **Ângulo editorial:** ${l.angulo_editorial}`);
+    if (l.fonte)                 out.push(`- **Fonte:** ${l.fonte}`);
+    out.push(`- **Falta para validar:** ${f.length ? f.join(', ') : '✓ nada (pronta)'}`);
+    if (l.obs)                   out.push(`- **Obs:** ${l.obs}`);
+    out.push('');
+  };
+
+  const disponiveis = linhas.linhas.filter((l) => l.edicao === null || l.edicao === undefined);
+  const usadas = linhas.linhas.filter((l) => l.edicao != null);
+
+  out.push('## Disponíveis para próximas edições', '');
+  if (!disponiveis.length) out.push('_Nenhuma disponível._', '');
+  disponiveis.forEach(ficha);
+
+  out.push('## Já publicadas', '');
+  if (!usadas.length) out.push('_Nenhuma ainda._', '');
+  for (const l of usadas) {
+    out.push(`- **${l.id}** — ${l.empresa}: ${l.linha} — edição ${l.edicao}`);
+  }
+  out.push('');
+  return out.join('\n');
+}
+
+// ── noticias-disponiveis.md ─────────────────────────────────────────────────
+// Notícias prontas para próximas edições: status usável e ângulos livres.
+function gerarDisponiveis() {
+  const out = ['# Notícias disponíveis para próximas edições', '', avisoGerado, ''];
+  out.push(
+    'Notícias com **ângulos livres**, prontas para entrar em futuras edições.',
+    'Excluídas as vencidas, esgotadas, em quarentena ou pendentes de apuração.',
+    'Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.',
+    '',
+  );
+
+  const usavel = (s) => s === 'disponivel' || s === 'parcial';
+  let houve = false;
+
+  for (const [slug, nome] of BLOCOS) {
+    const itens = pool.itens.filter(
+      (i) => i.bloco === slug && usavel(i.status) && i.angulos.some((a) => a.usado_em === null),
+    );
+    if (!itens.length) continue;
+    houve = true;
+    out.push(`## ${nome}`, '');
+    for (const i of itens) {
+      const flags = [];
+      if (i.origem && i.origem !== 'BR') flags.push(i.origem);
+      if (i.requer_traducao) flags.push('traduzir');
+      const flagTxt = flags.length ? ` · ${flags.join(' · ')}` : '';
+      out.push(`### ${i.id} — ${i.titulo}`);
+      out.push(`\`${i.tipo} · peso ${i.peso} · ${i.veiculo}${flagTxt}\``, '');
+      for (const a of i.angulos.filter((a) => a.usado_em === null)) {
+        out.push(`- **${a.id}** — ${a.desc}`);
+        if (a.impacto_brasil) out.push(`  - _Impacto Brasil:_ ${a.impacto_brasil}`);
+      }
+      out.push('');
+    }
+  }
+  if (!houve) out.push('_Nenhuma notícia disponível no momento._', '');
+  return out.join('\n');
+}
+
 function gerar() {
-  fs.writeFileSync(path.join(ROOT, 'noticias-usadas.md'), gerarUsadas());
-  fs.writeFileSync(path.join(ROOT, 'noticias-por-tipo.md'), gerarPorTipo());
+  fs.mkdirSync(CURADORIA, { recursive: true });
+  fs.writeFileSync(path.join(CURADORIA, 'noticias-disponiveis.md'), gerarDisponiveis());
+  fs.writeFileSync(path.join(CURADORIA, 'noticias-usadas.md'), gerarUsadas());
+  fs.writeFileSync(path.join(CURADORIA, 'noticias-por-tipo.md'), gerarPorTipo());
+  fs.writeFileSync(path.join(CURADORIA, 'linhas-perfis.md'), gerarLinhas());
 }
 
 module.exports = { gerar };
