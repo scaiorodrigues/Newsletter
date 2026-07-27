@@ -2,8 +2,9 @@
 
 > Documento gerado por `npm run indices` — não editar à mão.
 
-Notícias com **ângulos livres**, prontas para entrar em futuras edições.
-Excluídas as vencidas, esgotadas, em quarentena ou pendentes de apuração.
+Notícias **recentes** (até 30 dias) com **ângulos livres**,
+prontas para entrar em futuras edições. Passado esse prazo, a notícia sai
+daqui e vai para `nao-tratadas.md`. Evergreens (conteúdo atemporal) não expiram.
 Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.
 
 ## Mercado Global
@@ -42,24 +43,6 @@ Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.
 - **a2** — Declaração de Janaina Donas (ABAL): transição energética como disputa por cadeias de valor
   - _Impacto Brasil:_ Quem não transforma o metal perde a riqueza gerada pelos seus ativos — argumento direto para o extrusor.
 
-### NT-008 — O que esperar de 2026: perspectivas dos principais players brasileiros
-`analise · peso alta · Revista Alumínio`
-
-- **a2** — Alubar: 100 mil t/ano de vergalhão e 40 mil t/ano de cabos elétricos na planta norte-americana
-  - _Impacto Brasil:_ Empresa brasileira expandindo capacidade fora do Brasil — onde vai o alumínio produzido aqui.
-- **a3** — Alubar recebe rating A-(bra) da Fitch, perspectiva estável
-  - _Impacto Brasil:_ Crédito acessível para o setor — referência para extrusoras que buscam financiamento de expansão.
-- **a4** — AMG investe em equipamentos apesar do cenário geopolítico adverso
-  - _Impacto Brasil:_ Estratégia de manter CAPEX em ciclo de incerteza — contraexemplo para quem está segurando investimento.
-
-### NT-017 — Fesqua 2026: robôs e IA como resposta ao gargalo de mão de obra
-`noticia · peso alta · Contramarco`
-
-- **a2** — Academia AFEAL + SENAI: formação técnica como estratégia setorial
-  - _Impacto Brasil:_ Canal de qualificação acessível — custo de treinar é menor que custo de retrabalho por operador sem preparo.
-- **a3** — Voilàp Brasil e equipamentos integrados com IA na Fesqua
-  - _Impacto Brasil:_ Primeiro contato do fabricante de esquadria com automação assistida — tendência que chega ao médio porte.
-
 ### NT-019 — Encontro AFEAL na Fesqua 2026 (09–12/09): agenda e oportunidades
 `evergreen · peso baixa · Fesqua / AFEAL`
 
@@ -67,12 +50,6 @@ Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.
   - _Impacto Brasil:_ Único fórum público onde os dados de extrusão são discutidos — participar ou cobrir é obrigatório.
 
 ## Política Comercial e Normas
-
-### NT-010 — SECEX abre revisão de antidumping sobre chapas de alumínio offset da China
-`regulatorio · peso baixa · LegisWeb / DOU`
-
-- **a1** — Revisão da medida sobre NCM 3701.30.21/31 — termômetro da postura brasileira
-  - _Impacto Brasil:_ O Brasil age em defesa comercial no alumínio, mas não em perfis extrudados — assimetria que o setor precisa questionar.
 
 ### NT-012 — NBR 10821, 15575, 7199 e 10820: o mapa normativo das esquadrias
 `evergreen · peso media · Expar Alumínio`
@@ -83,16 +60,6 @@ Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.
   - _Impacto Brasil:_ Construtoras de médio/grande porte já exigem comprovação de NBR 15575 — fabricante sem ensaio perde licitação.
 - **a3** — Normas satélite: NBR 7199 (vidros) e NBR 10820 (portas e janelas de correr)
   - _Impacto Brasil:_ Sistema normativo interligado — conformidade parcial não protege o fabricante juridicamente.
-
-### NT-016 — Austrália abre investigação antidumping sobre extrudados de alumínio da China (Caso 700)
-`regulatorio · peso alta · Anti-Dumping Commission (Austrália) · AU · traduzir`
-
-- **a2** — NCMs cobertas: 7604.10, 7604.21, 7604.29, 7608.10, 7608.20, 7610.10, 7610.90
-  - _Impacto Brasil:_ As mesmas NCMs pelo qual o extrudado chinês entra no Brasil hoje, sem barreira equivalente.
-- **a3** — EUA (desde 2011), UE (desde 2021) e Austrália (2026) — três grandes mercados barrando extrudados chineses
-  - _Impacto Brasil:_ Com três destinos fechados, o Brasil se torna rota natural de desvio — sem medida, o impacto chega em meses.
-- **a4** — Recomendação final: até 11/6/2026; decisão ministerial em até 30 dias após
-  - _Impacto Brasil:_ Resultado já deve ter saído — buscar a decisão final é a próxima rodada de apuração.
 
 ## Brasil em Foco
 
@@ -113,9 +80,3 @@ Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.
   - _Impacto Brasil:_ Retração no elo transformador sinaliza pressão de margem para extrusoras e fabricantes de esquadria.
 - **a2** — Brasil: 4º em bauxita, 3º em alumina, 9º em primário — posição global da cadeia
   - _Impacto Brasil:_ País forte no upstream, fraco no downstream: gap estratégico que a newsletter deve nomear.
-
-### NT-014 — Fesqua 2026 amplia área em 25% com 700 marcas
-`noticia · peso alta · Jornal do Brás`
-
-- **a2** — Fesqua 2026: 700 marcas, área 25% maior, simultaneidade com Vetro, EBRATS e Feipat
-  - _Impacto Brasil:_ Maior feira do setor como termômetro de confiança e ponto de lançamento de produtos novos.

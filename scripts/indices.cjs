@@ -32,6 +32,17 @@ const fmtData = (iso) =>
   iso ? new Date(iso + 'T12:00:00').toLocaleDateString('pt-BR',
     { day: '2-digit', month: 'long', year: 'numeric' }) : '—';
 
+// Janela de frescor da curadoria: notícia com mais de 30 dias (por data do
+// fato) sai do banco ativo e cai em "não tratadas". Evergreens (sem
+// data_fato) são atemporais e não expiram por aqui.
+const JANELA_CURADORIA = 30;
+const hoje = new Date();
+const diasDesde = (iso) => (iso ? Math.floor((hoje - new Date(iso + 'T12:00:00')) / 864e5) : null);
+const fresca = (i) => {
+  if (i.tipo === 'evergreen' || !i.data_fato) return true; // atemporal
+  return diasDesde(i.data_fato) <= JANELA_CURADORIA;
+};
+
 const item = (id) => pool.itens.find((i) => i.id === id);
 const linha = (id) => linhas.linhas.find((l) => l.id === id);
 const avisoGerado = '> Documento gerado por `npm run indices` — não editar à mão.';
@@ -153,8 +164,9 @@ function gerarLinhas() {
 function gerarDisponiveis() {
   const out = ['# Notícias disponíveis para próximas edições', '', avisoGerado, ''];
   out.push(
-    'Notícias com **ângulos livres**, prontas para entrar em futuras edições.',
-    'Excluídas as vencidas, esgotadas, em quarentena ou pendentes de apuração.',
+    `Notícias **recentes** (até ${JANELA_CURADORIA} dias) com **ângulos livres**,`,
+    'prontas para entrar em futuras edições. Passado esse prazo, a notícia sai',
+    'daqui e vai para `nao-tratadas.md`. Evergreens (conteúdo atemporal) não expiram.',
     'Cada ângulo traz o recorte e o impacto Brasil, para você escolher a pauta.',
     '',
   );
@@ -164,7 +176,7 @@ function gerarDisponiveis() {
 
   for (const [slug, nome] of BLOCOS) {
     const itens = pool.itens.filter(
-      (i) => i.bloco === slug && usavel(i.status) && i.angulos.some((a) => a.usado_em === null),
+      (i) => i.bloco === slug && usavel(i.status) && fresca(i) && i.angulos.some((a) => a.usado_em === null),
     );
     if (!itens.length) continue;
     houve = true;
@@ -183,13 +195,42 @@ function gerarDisponiveis() {
       out.push('');
     }
   }
-  if (!houve) out.push('_Nenhuma notícia disponível no momento._', '');
+  if (!houve) out.push('_Nenhuma notícia recente disponível no momento._', '');
+  return out.join('\n');
+}
+
+// ── nao-tratadas.md ─────────────────────────────────────────────────────────
+// Notícias que passaram da janela de 30 dias sem serem esgotadas — saíram do
+// banco ativo. Ainda têm ângulos livres, mas exigem decisão: descartar,
+// reaproveitar como marco histórico, ou reapurar com dado novo.
+function gerarNaoTratadas() {
+  const out = ['# Notícias não tratadas (fora da janela)', '', avisoGerado, ''];
+  out.push(
+    `Notícias com mais de ${JANELA_CURADORIA} dias (por data do fato) que ainda`,
+    'têm ângulos livres. Saíram do banco ativo por não serem recentes. Decida:',
+    'descartar, usar só como marco histórico, ou reapurar com fato novo.',
+    '',
+  );
+  const foraDoAtivo = (s) => !['quarentena', 'pendente_apuracao', 'esgotada'].includes(s);
+  const itens = pool.itens
+    .filter((i) => i.data_fato && i.tipo !== 'evergreen' && !fresca(i) && foraDoAtivo(i.status))
+    .filter((i) => i.angulos.some((a) => a.usado_em === null))
+    .sort((a, b) => diasDesde(b.data_fato) - diasDesde(a.data_fato));
+
+  if (!itens.length) { out.push('_Nenhuma no momento._', ''); return out.join('\n'); }
+  for (const i of itens) {
+    const livres = i.angulos.filter((a) => a.usado_em === null).length;
+    out.push(`- **${i.id}** — ${i.titulo}`);
+    out.push(`  - \`${diasDesde(i.data_fato)} dias · ${i.tipo} · status ${i.status} · ${livres} ângulo(s) livre(s) · ${i.veiculo}\``);
+  }
+  out.push('');
   return out.join('\n');
 }
 
 function gerar() {
   fs.mkdirSync(CURADORIA, { recursive: true });
   fs.writeFileSync(path.join(CURADORIA, 'noticias-disponiveis.md'), gerarDisponiveis());
+  fs.writeFileSync(path.join(CURADORIA, 'nao-tratadas.md'), gerarNaoTratadas());
   fs.writeFileSync(path.join(CURADORIA, 'noticias-usadas.md'), gerarUsadas());
   fs.writeFileSync(path.join(CURADORIA, 'noticias-por-tipo.md'), gerarPorTipo());
   fs.writeFileSync(path.join(CURADORIA, 'linhas-perfis.md'), gerarLinhas());
@@ -199,5 +240,5 @@ module.exports = { gerar };
 
 if (require.main === module) {
   gerar();
-  console.log('✓ noticias-usadas.md e noticias-por-tipo.md gerados.');
+  console.log('✓ índices de curadoria gerados em curadoria/.');
 }
