@@ -18,6 +18,9 @@ const {
 const assinarUrl = assinatura.url;
 const whatsappUrl = assinatura.whatsapp;
 const assinantes = assinatura.assinantes;
+// A UI de assinatura só aparece quando há uma URL real configurada
+// (fica dormente até o provedor de e-mail ser definido).
+const mostrarAssinatura = Boolean(assinarUrl && !assinarUrl.includes('exemplo'));
 ---
 
 <!doctype html>
@@ -68,7 +71,7 @@ const assinantes = assinatura.assinantes;
           <a class="site-title" href={link('')}>Newsletters</a>
         </div>
         <div class="header-acoes">
-          <a class="btn-assinar" href={assinarUrl}>Assinar</a>
+          {mostrarAssinatura && <a class="btn-assinar" href={assinarUrl}>Assinar</a>}
           <button
             id="tema-toggle"
             class="tema-toggle"
@@ -85,6 +88,7 @@ const assinantes = assinatura.assinantes;
     <main class="wrap">
       <slot />
 
+      {mostrarAssinatura && (
       <section class="assinar-cta">
         <h2 class="assinar-titulo">Receba cada edição no seu e-mail</h2>
         <p class="assinar-sub">
@@ -107,6 +111,7 @@ const assinantes = assinatura.assinantes;
           }
         </div>
       </section>
+      )}
     </main>
 
     <footer class="site-footer">
